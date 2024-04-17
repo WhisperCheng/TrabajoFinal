@@ -21,10 +21,14 @@ public class Movimiento : MonoBehaviour
     float fuerzaSalto;
     float cooldownSlide;
     Vector3 vectorSalto;
+    Vector3 velocidadDamp;
+    Vector3 movimiento;
+    public float inercia;
 
     // Start is called before the first frame update
     void Start()
     {
+        inercia = 0.1f;
         fuerzaGravedad = -9.81f;
         fuerzaSalto = 5;
         longitudRayo = 1.1f;
@@ -42,16 +46,21 @@ public class Movimiento : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //Movimiento del personaje
-        Vector2 inputMovimiento = playerInput.actions["Move"].ReadValue<Vector2>();
-        Vector3 move = transform.right * inputMovimiento.x + transform.forward * inputMovimiento.y;
-        characterController.Move(move * velocidadMovimiento * Time.deltaTime);
+        //Se encarga de recibir el input del teclado y calcular la velocidad de movimiento y añadir la inercia
+        Vector2 inputMovimientoWASD = playerInput.actions["Move"].ReadValue<Vector2>();
+        Vector3 move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
+        movimiento = Vector3.SmoothDamp(movimiento, move * velocidadMovimiento, ref velocidadDamp, inercia);
 
+        //Se encarga de mover al personaje
+        characterController.Move(movimiento * Time.deltaTime);
+        
         //Se encarga de añadir gravedad al personaje
         vectorSalto.y += fuerzaGravedad * Time.deltaTime;
+
+        //Se encarga de hacer saltar al personaje
         characterController.Move(vectorSalto * Time.deltaTime);
 
-        //Se encarga de mirar si el personaje esta tocando "algo" para poder saltar
+        //Se encarga de mirar si el personaje esta colisionandio con "algo" para poder saltar
         rayoSalto();
     }
 
