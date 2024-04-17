@@ -137,18 +137,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_ActionId
       value: b1619a36-926b-413c-bac9-62ce0e5a3ba6
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 7a30e1a3-fcfd-455f-9b3c-16fa2b1b37d9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_ActionName
       value: Player/New action
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/Dash[/Keyboard/shift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
@@ -156,7 +168,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1674794265}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1674794265}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
@@ -164,15 +184,31 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: slide
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: dash
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Movimiento, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Movimiento, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6108551292097644992, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}

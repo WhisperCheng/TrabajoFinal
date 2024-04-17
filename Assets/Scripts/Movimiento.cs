@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Movimiento : MonoBehaviour
 {
@@ -11,7 +13,8 @@ public class Movimiento : MonoBehaviour
     CharacterController characterController;
 
     //variables
-    public float velocidadMovimiento;
+    float velocidadBase;
+    public float velocidad;
     bool colisionSuelo;
     float cooldownSalto;
     public int saltosExtras;
@@ -20,11 +23,15 @@ public class Movimiento : MonoBehaviour
     float fuerzaGravedad;
     float fuerzaSalto;
     float cooldownSlide;
+    float cooldownDash;
     Vector3 vectorSalto;
     Vector3 velocidadDamp;
     Vector3 movimiento;
+    Vector3 move;
+    Vector2 inputMovimientoWASD;
     public float inercia;
 
+    Vector3 prueba;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +40,8 @@ public class Movimiento : MonoBehaviour
         fuerzaSalto = 5;
         longitudRayo = 1.1f;
         saltosExtras = 1;
-        velocidadMovimiento = 12;
+        velocidadBase = 12;
+        velocidad = velocidadBase;
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
     }
@@ -41,15 +49,16 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cooldownDash += Time.deltaTime;
         cooldownSlide += Time.deltaTime;
         cooldownSalto += Time.deltaTime;
     }
     private void FixedUpdate()
     {
         //Se encarga de recibir el input del teclado y calcular la velocidad de movimiento y añadir la inercia
-        Vector2 inputMovimientoWASD = playerInput.actions["Move"].ReadValue<Vector2>();
-        Vector3 move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
-        movimiento = Vector3.SmoothDamp(movimiento, move * velocidadMovimiento, ref velocidadDamp, inercia);
+        inputMovimientoWASD = playerInput.actions["Move"].ReadValue<Vector2>();
+        move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
+        movimiento = Vector3.SmoothDamp(movimiento, move * velocidad, ref velocidadDamp, inercia);
 
         //Se encarga de mover al personaje
         characterController.Move(movimiento * Time.deltaTime);
@@ -85,13 +94,13 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
         {
-            velocidadMovimiento = 24;
+            velocidad = velocidadBase + 12;
             transform.localScale = new Vector3 (transform.localScale.x, 0.5f, transform.localScale.z);
             cooldownSlide = 0;
         }
         else
         {
-            velocidadMovimiento = 12;
+            velocidad = velocidadBase;
             transform.localScale = new Vector3 (transform.localScale.x, 1, transform.localScale.z);
         }
     }
@@ -114,6 +123,19 @@ public class Movimiento : MonoBehaviour
         else
         {
             colisionSuelo = false;
+        }
+    }
+    //Tengo que arreglar el dash
+    public void dash(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed && move.x >= 0.1f || move.x >= -0.1f || move.z >= -0.1f && cooldownDash >= 3)
+        {
+            velocidad = velocidadBase + 50;
+            cooldownDash = 0;
+        }
+        else
+        {
+            velocidad = velocidadBase;
         }
     }
 
