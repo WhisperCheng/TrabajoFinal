@@ -16,14 +16,14 @@ public class Movimiento : MonoBehaviour
     float velocidadBase;
     public float velocidad;
     bool colisionSuelo;
-    float cooldownSalto;
+    public float cooldownSalto;
     public int saltosExtras;
     public int saltosExtrasRestantes;
     float longitudRayo;
     float fuerzaGravedad;
     float fuerzaSalto;
-    float cooldownSlide;
-    float cooldownDash;
+    public float cooldownSlide;
+    public float cooldownDash;
     Vector3 vectorSalto;
     Vector3 velocidadDamp;
     Vector3 movimiento;
@@ -31,7 +31,8 @@ public class Movimiento : MonoBehaviour
     Vector2 inputMovimientoWASD;
     public float inercia;
 
-    Vector3 prueba;
+    float horizontalDireccion;
+    float verticalDireccion;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +63,7 @@ public class Movimiento : MonoBehaviour
 
         //Se encarga de mover al personaje
         characterController.Move(movimiento * Time.deltaTime);
-        
+
         //Se encarga de añadir gravedad al personaje
         vectorSalto.y += fuerzaGravedad * Time.deltaTime;
 
@@ -71,6 +72,9 @@ public class Movimiento : MonoBehaviour
 
         //Se encarga de mirar si el personaje esta colisionandio con "algo" para poder saltar
         rayoSalto();
+
+        horizontalDireccion = Input.GetAxisRaw("Horizontal");
+        verticalDireccion = Input.GetAxisRaw("Vertical");
     }
 
     //Se encarga de el salto del personaje
@@ -89,6 +93,7 @@ public class Movimiento : MonoBehaviour
             saltosExtrasRestantes -= 1;
         }
     }
+
     // se encarga de hacer el slide durante X segundos
     public void slide(InputAction.CallbackContext context)
     {
@@ -128,10 +133,11 @@ public class Movimiento : MonoBehaviour
     //Tengo que arreglar el dash
     public void dash(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed && move.x >= 0.1f || move.x >= -0.1f || move.z >= -0.1f && cooldownDash >= 3)
+        if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && horizontalDireccion == 1 || horizontalDireccion == -1 || verticalDireccion == -1)
         {
             velocidad = velocidadBase + 50;
             cooldownDash = 0;
+            Debug.Log("Me eh ejecutado");
         }
         else
         {
