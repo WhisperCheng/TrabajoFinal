@@ -14,7 +14,7 @@ public class MovimientoCamara : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sensibilidad = 10f;
+        sensibilidad = 20f;
         playerInput = GetComponent<PlayerInput>();
 
         Cursor.lockState = CursorLockMode.Locked;

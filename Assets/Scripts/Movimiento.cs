@@ -61,6 +61,8 @@ public class Movimiento : MonoBehaviour
         move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
         movimiento = Vector3.SmoothDamp(movimiento, move * velocidad, ref velocidadDamp, inercia);
 
+
+        //Debug.Log(inputMovimientoWASD);
         //Se encarga de mover al personaje
         characterController.Move(movimiento * Time.deltaTime);
 
@@ -72,9 +74,6 @@ public class Movimiento : MonoBehaviour
 
         //Se encarga de mirar si el personaje esta colisionandio con "algo" para poder saltar
         rayoSalto();
-
-        horizontalDireccion = Input.GetAxisRaw("Horizontal");
-        verticalDireccion = Input.GetAxisRaw("Vertical");
     }
 
     //Se encarga de el salto del personaje
@@ -133,13 +132,13 @@ public class Movimiento : MonoBehaviour
     //Tengo que arreglar el dash
     public void dash(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && horizontalDireccion == 1 || horizontalDireccion == -1 || verticalDireccion == -1)
+        if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
             velocidad = velocidadBase + 50;
             cooldownDash = 0;
             Debug.Log("Me eh ejecutado");
         }
-        else
+        else if (cooldownDash >= 0.1)
         {
             velocidad = velocidadBase;
         }

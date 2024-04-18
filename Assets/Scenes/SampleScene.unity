@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,13 +131,61 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: b1619a36-926b-413c-bac9-62ce0e5a3ba6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 7a30e1a3-fcfd-455f-9b3c-16fa2b1b37d9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: 536c6298-22db-487a-916b-9ae0bb46829c
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Slide[/Keyboard/ctrl,/XInputControllerWindows/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625204764273775053, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Camara/MoveCamera[/Mouse/delta]
+      objectReference: {fileID: 0}
     - target: {fileID: 4548090731471604430, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_Name
       value: Personaje
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5841836381118371973, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_ActionId
@@ -272,6 +320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2359907316294478091, guid: f7a59ad7f649e0d4a843e7c255b51dbf, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 0798b9f883fd0604e9ae830b2a332e4d, type: 2}
     - target: {fileID: 471369118236399461, guid: f7a59ad7f649e0d4a843e7c255b51dbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
