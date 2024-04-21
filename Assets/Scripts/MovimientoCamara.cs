@@ -5,24 +5,30 @@ using UnityEngine.InputSystem;
 
 public class MovimientoCamara : MonoBehaviour
 {
-
+    //Declaraciones
     PlayerInput playerInput;
 
+    //Variables float
     float sensibilidad;
     float rotacionVertical;
+
+    //Variables transform para la rotacion del personaje
     public Transform cuerpoPersonaje;
+
     // Start is called before the first frame update
     void Start()
     {
         sensibilidad = 20f;
         playerInput = GetComponent<PlayerInput>();
 
+        //Sirve para hacer desaperecer el raton
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Todo el movimiento de la camara en primera persona
         Vector2 inputMovimientoCamara = playerInput.actions["Look"].ReadValue<Vector2>() * sensibilidad * Time.deltaTime;
 
         rotacionVertical -= inputMovimientoCamara.y;

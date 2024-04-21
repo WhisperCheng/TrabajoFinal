@@ -8,31 +8,39 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Movimiento : MonoBehaviour
 {
-    //declaraciones
+    //Declaraciones
     PlayerInput playerInput;
     CharacterController characterController;
 
-    //variables
-    float velocidadBase;
-    public float velocidad;
-    bool colisionSuelo;
+    //Variables float "Cooldowns"
     public float cooldownSalto;
-    public int saltosExtras;
-    public int saltosExtrasRestantes;
+    public float cooldownSlide;
+    public float cooldownDash;
+
+    //Variables float "Velocidad"
+    public float velocidad;
+    float velocidadBase;
+    public float inercia;
+
+    //Variables float "Salto"
     float longitudRayo;
     float fuerzaGravedad;
     float fuerzaSalto;
-    public float cooldownSlide;
-    public float cooldownDash;
+
+    //Variables bool
+    bool colisionSuelo;
+
+    //Variables int
+    public int saltosExtras;
+    public int saltosExtrasRestantes;
+
+    //Variables Vector3 y Vector2
     Vector3 vectorSalto;
     Vector3 velocidadDamp;
     Vector3 movimiento;
     Vector3 move;
     Vector2 inputMovimientoWASD;
-    public float inercia;
 
-    float horizontalDireccion;
-    float verticalDireccion;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,8 +69,6 @@ public class Movimiento : MonoBehaviour
         move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
         movimiento = Vector3.SmoothDamp(movimiento, move * velocidad, ref velocidadDamp, inercia);
 
-
-        //Debug.Log(inputMovimientoWASD);
         //Se encarga de mover al personaje
         characterController.Move(movimiento * Time.deltaTime);
 
@@ -93,7 +99,7 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    // se encarga de hacer el slide durante X segundos
+    //Se encarga de hacer el slide durante X segundos
     public void slide(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
@@ -129,14 +135,14 @@ public class Movimiento : MonoBehaviour
             colisionSuelo = false;
         }
     }
-    //Tengo que arreglar el dash
+
+    //Se encarga de hacer el dash pero solo de forma lateral y hacia atras NO se puede hacerlo de frente
     public void dash(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
             velocidad = velocidadBase + 50;
             cooldownDash = 0;
-            Debug.Log("Me eh ejecutado");
         }
         else if (cooldownDash >= 0.1)
         {
