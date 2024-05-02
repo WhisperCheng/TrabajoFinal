@@ -3,71 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.U2D;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Armas : MonoBehaviour
 {
-    public int daño;
-    public float timeBetweenShooting;
-    public float tiempoRecarga;
-    public float timeBetweenShoot;
-    public int capacidadCargador;
-    public int balasPorTap;
-    int balasRestante;
-    int balasDisparadas;
+    //Estadisticas arma
+    float daño;
+    float rango;
 
-    public bool allowButtonHold;
-
-    public float rango;
-
-    bool disparando;
-    bool preparadoDisparar;
-    bool recargando;
-
-    public Camera fpsCamara;
-    public Transform puntoAtaque;
-    public LayerMask enemigo;
-
-    PlayerInput PlayerInput;
-
-    void Awake()
-    {
-        balasRestante = capacidadCargador;
-        preparadoDisparar = true;
-    }
+    public GameObject fpsCamera;
+    PlayerInput playerInput;
     void Start()
     {
-        PlayerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
+        rango = 100;
+    }
+    void Update()
+    {
+        
     }
 
     public void MyInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed && preparadoDisparar && disparando && !recargando && balasRestante > 0)
+        if (context.phase == InputActionPhase.Performed)
         {
-            Debug.Log("eh disparado");
             Disparo();
         }
     }
-    private void Disparo()
+    public void Disparo()
     {
+            RaycastHit hit;
 
-        RaycastHit hit;
-
-        if (Physics.Raycast(fpsCamara.transform.position,fpsCamara.transform.forward, out hit, rango, enemigo))
-        {
-            Debug.Log(hit.collider.name);
-
-            if (hit.collider.CompareTag("Enemigo"))
+            if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango))
             {
-                //Scritp de quitar vida al enemigo.
+                Debug.Log(hit.transform.name);
             }
-        }
-    }
-
-    public void Recargar (InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed && balasRestante < capacidadCargador && !recargando) 
-        {
-
-        }
     }
 }
