@@ -18,20 +18,17 @@ public class Movimiento : MonoBehaviour
     public float cooldownDash;
 
     //Variables float "Velocidad"
-    public float velocidad;
-    float velocidadBase;
+    public float velocidadMovimiento;
     public float inercia;
 
     //Variables float "Salto"
     float longitudRayo;
     float fuerzaGravedad;
-    float fuerzaSalto;
 
     //Variables bool
     bool colisionSuelo;
 
     //Variables int
-    public int saltosExtras;
     public int saltosExtrasRestantes;
 
     //Variables Vector3 y Vector2
@@ -46,11 +43,8 @@ public class Movimiento : MonoBehaviour
     {
         inercia = 0.1f;
         fuerzaGravedad = -9.81f;
-        fuerzaSalto = 5;
         longitudRayo = 1.1f;
-        saltosExtras = 1;
-        velocidadBase = 12;
-        velocidad = velocidadBase;
+        velocidadMovimiento = GameManager.Instance.velocidadBase;
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
     }
@@ -67,7 +61,7 @@ public class Movimiento : MonoBehaviour
         //Se encarga de recibir el input del teclado y calcular la velocidad de movimiento y añadir la inercia
         inputMovimientoWASD = playerInput.actions["Move"].ReadValue<Vector2>();
         move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
-        movimiento = Vector3.SmoothDamp(movimiento, move * velocidad, ref velocidadDamp, inercia);
+        movimiento = Vector3.SmoothDamp(movimiento, move * velocidadMovimiento, ref velocidadDamp, inercia);
 
         //Se encarga de mover al personaje
         characterController.Move(movimiento * Time.deltaTime);
@@ -87,13 +81,13 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed && colisionSuelo == true)
         {
-            vectorSalto.y = fuerzaSalto;
+            vectorSalto.y = GameManager.Instance.fuerzaSalto;
             cooldownSalto = 0;
             colisionSuelo = false;
         }
         if (context.phase == InputActionPhase.Performed && cooldownSalto >= 0.1f && saltosExtrasRestantes > 0)
         {
-            vectorSalto.y = fuerzaSalto;
+            vectorSalto.y = GameManager.Instance.fuerzaSalto;
             cooldownSalto = 0;
             saltosExtrasRestantes -= 1;
         }
@@ -104,13 +98,13 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
         {
-            velocidad = velocidadBase + 12;
+            velocidadMovimiento += 12;
             transform.localScale = new Vector3 (transform.localScale.x, 0.5f, transform.localScale.z);
             cooldownSlide = 0;
         }
         else
         {
-            velocidad = velocidadBase;
+            velocidadMovimiento = GameManager.Instance.velocidadBase;
             transform.localScale = new Vector3 (transform.localScale.x, 1, transform.localScale.z);
         }
     }
@@ -127,7 +121,7 @@ public class Movimiento : MonoBehaviour
         if (Physics.Raycast(origen, direccion, out golpeSuelo, longitudRayo)) 
         {
             colisionSuelo = true;
-            saltosExtrasRestantes = saltosExtras;
+            saltosExtrasRestantes = GameManager.Instance.saltosExtrasBase;
             vectorSalto.y = -2f;
         }
         else
@@ -141,12 +135,12 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
-            velocidad = velocidadBase + 50;
+            velocidadMovimiento +=  50;
             cooldownDash = 0;
         }
         else if (cooldownDash >= 0.1)
         {
-            velocidad = velocidadBase;
+            velocidadMovimiento = GameManager.Instance.velocidadBase;
         }
     }
 
@@ -155,5 +149,14 @@ public class Movimiento : MonoBehaviour
         Gizmos.color = Color.green;
         Vector3 direccionGizmo = -transform.up * 1.1f;
         Gizmos.DrawRay(transform.position, direccionGizmo);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Habilidad")
+        {
+            other.GetComponent<HabilidadesManager>().ActivarHabilidad();
+            velocidadMovimiento = GameManager.Instance.velocidadBase;
+        }
     }
 }

@@ -9,7 +9,6 @@ public class MovimientoCamara : MonoBehaviour
     PlayerInput playerInput;
 
     //Variables float
-    float sensibilidad;
     float rotacionVertical;
 
     //Variables transform para la rotacion del personaje
@@ -18,7 +17,6 @@ public class MovimientoCamara : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sensibilidad = 20f;
         playerInput = GetComponent<PlayerInput>();
 
         //Sirve para hacer desaperecer el raton
@@ -29,7 +27,7 @@ public class MovimientoCamara : MonoBehaviour
     void Update()
     {
         //Todo el movimiento de la camara en primera persona
-        Vector2 inputMovimientoCamara = playerInput.actions["Look"].ReadValue<Vector2>() * sensibilidad * Time.deltaTime;
+        Vector2 inputMovimientoCamara = playerInput.actions["Look"].ReadValue<Vector2>() * GameManager.Instance.sensibilidad * Time.deltaTime;
 
         rotacionVertical -= inputMovimientoCamara.y;
         rotacionVertical = Mathf.Clamp(rotacionVertical, -90, 90);
