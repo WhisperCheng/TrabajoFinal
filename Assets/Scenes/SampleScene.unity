@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -551,9 +551,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3468088768499869524, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1833397479}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+--- !u!4 &241551074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+  m_PrefabInstance: {fileID: 1561999751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &308404096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -709,6 +717,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &720644036 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3468088768499869524, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+  m_PrefabInstance: {fileID: 34545403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +849,71 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1561999751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1833397479}
+    m_Modifications:
+    - target: {fileID: 356724066826536954, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_Name
+      value: Pistola
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 35.877663
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 16.47176
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.793
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18699998
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0950003
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430018019593728492, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2705a2ec2cb2f44db37d849fae010a2, type: 3}
 --- !u!114 &1674794265 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7877908811457653842, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
@@ -897,6 +975,127 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1833397478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833397479}
+  - component: {fileID: 1833397481}
+  - component: {fileID: 1833397480}
+  m_Layer: 0
+  m_Name: Arma
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1833397479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833397478}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 241551074}
+  m_Father: {fileID: 720644036}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833397480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833397478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 909a06921002e8a4aaa1fe7db5e4b48e, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833397481}
+        m_TargetAssemblyTypeName: Armas, Assembly-CSharp
+        m_MethodName: Input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a074875a-dcd6-4c62-89e1-c64fbb853abd
+    m_ActionName: Disparo/Disparo[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833397481}
+        m_TargetAssemblyTypeName: Armas, Assembly-CSharp
+        m_MethodName: Recargar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 35b1398f-702a-484a-bec0-4903fba87930
+    m_ActionName: Disparo/New action
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Disparo
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1833397481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833397478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53431b9372d66dc42804a1f6fce228b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "da\xF1o": 0
+  timeBetweenShooting: 0
+  tiempoRecarga: 0
+  timeBetweenShoot: 0
+  capacidadCargador: 20
+  balasPorTap: 0
+  allowButtonHold: 0
+  rango: 0
+  fpsCamara: {fileID: 0}
+  puntoAtaque: {fileID: 0}
+  enemigo:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

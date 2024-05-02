@@ -1,0 +1,54 @@
+{
+    "name": "Armas",
+    "maps": [
+        {
+            "name": "Disparo",
+            "id": "6e185230-efa8-44a2-91dd-ac3f3271b51e",
+            "actions": [
+                {
+                    "name": "Disparando",
+                    "type": "Button",
+                    "id": "a074875a-dcd6-4c62-89e1-c64fbb853abd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Recarga",
+                    "type": "Button",
+                    "id": "35b1398f-702a-484a-bec0-4903fba87930",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "759ddec9-f181-4d0b-9663-6d63e32de560",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disparando",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e57c2ba-1718-4d2d-841f-e5ae8c2edb6a",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recarga",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
