@@ -52,6 +52,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Distintos cooldown del movimiento
         cooldownDash += Time.deltaTime;
         cooldownSlide += Time.deltaTime;
         cooldownSalto += Time.deltaTime;
@@ -151,11 +152,12 @@ public class Movimiento : MonoBehaviour
         Gizmos.DrawRay(transform.position, direccionGizmo);
     }
 
+    //Al colisionar con los objetos que representan las habilidades se activan y escalan.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Habilidad")
         {
-            other.GetComponent<HabilidadesManager>().ActivarHabilidad();
+            other.GetComponent<IHabilidadesManager>().ActivarHabilidad();
             velocidadMovimiento = GameManager.Instance.velocidadBase;
         }
     }

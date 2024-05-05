@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacaArmadura : MonoBehaviour, HabilidadesManager
+public class PlacaArmadura : MonoBehaviour, IHabilidadesManager
 {
-    void HabilidadesManager.ActivarHabilidad()
+    void IHabilidadesManager.ActivarHabilidad()
     {
         GameManager.Instance.AumentarReduccionDaño();
         Destroy(gameObject);

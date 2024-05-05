@@ -15,20 +15,20 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Recarga",
-                    "type": "Button",
-                    "id": "35b1398f-702a-484a-bec0-4903fba87930",
-                    "expectedControlType": "Button",
+                    "name": "CambiarArma",
+                    "type": "Value",
+                    "id": "7389f0cc-2a20-4905-aab7-3e5543680ba9",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "759ddec9-f181-4d0b-9663-6d63e32de560",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -37,15 +37,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "1e57c2ba-1718-4d2d-841f-e5ae8c2edb6a",
-                    "path": "<Keyboard>/r",
+                    "name": "CambioArmaRueda",
+                    "id": "476b0806-0746-4f93-a134-79a95338bfd9",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Recarga",
-                    "isComposite": false,
+                    "action": "CambiarArma",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "254ac341-bbf6-4565-8e89-ed5958ca8ef3",
+                    "path": "<Mouse>/scroll/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CambiarArma",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b11d82b0-5366-497e-a6eb-028ee389bf16",
+                    "path": "<Mouse>/scroll/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CambiarArma",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
