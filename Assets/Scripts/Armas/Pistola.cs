@@ -11,6 +11,9 @@ public class Pistola : ArmasDatos
         // Llamo a la clase start del padre
         base.Start();
         daño = 10;
+        cadencia = 15f;
+        cargador = 30;
+        balasRestantes = cargador;
         armaAutomatica = true;
     }
     public override void Disparar()

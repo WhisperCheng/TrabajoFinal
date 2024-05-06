@@ -9,6 +9,8 @@ public abstract class ArmasDatos : MonoBehaviour
     public float rango;
     public float cadencia;
     public float tiempoParaDisparar;
+    public int cargador;
+    public int balasRestantes;
     public bool armaAutomatica;
     public GameObject fpsCamera;
 
@@ -16,7 +18,6 @@ public abstract class ArmasDatos : MonoBehaviour
     {
         fpsCamera = GameObject.Find("CamaraPrimeraPersona");
         rango = Mathf.Infinity;
-        cadencia = 15f;
         tiempoParaDisparar = 0;
     }
 

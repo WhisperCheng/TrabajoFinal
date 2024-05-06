@@ -28,8 +28,6 @@ public class CambioArmas : MonoBehaviour
         //Se encarga de recibir el input de la rueda del raton en positivo o negativo
         cambioArmaRueda = playerInput.actions["CambiarArma"].ReadValue<float>();
 
-                //if (playerInput.actions["Disparando"].IsPressed()) Debug.Log("Pulsando el boton");
-
         //Para comprobar las armas
         int previaArma = armaSeleccionada;
 
@@ -58,6 +56,22 @@ public class CambioArmas : MonoBehaviour
         {
             ArmaSeleccionada();
         }
+
+        //Se encarga de que si el arma es automatica se mantenga el fuego constante
+        //Depenediendo del arma activa tendra mayor cadencia o no
+        if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
+        {
+            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar)
+            {
+                if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
+                { 
+                    armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
+                    Debug.Log("Se a mantenido");
+                    armaActiva.GetComponent<ArmasDatos>().Disparar();
+                    armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
+                }
+            }
+        }
     }
 
     //Se encarga de activar y desactivar el arma seleccionada
@@ -82,16 +96,7 @@ public class CambioArmas : MonoBehaviour
     }
     public void MiInput(InputAction.CallbackContext context)
     {
-        //si el arma es automatica
-        if (context.phase == InputActionPhase.Performed && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
-        {
-            if (playerInput.actions["Disparando"].IsPressed())
-            {
-                Debug.Log(context.phase);
-                armaActiva.GetComponent<ArmasDatos>().Disparar();
-            }
-        }
-        // si el arma es semi
+        // Si el arma es semiAutomatica se ejecuta este apartado.
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
         {
             armaActiva.GetComponent<ArmasDatos>().Disparar();
