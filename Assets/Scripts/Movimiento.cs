@@ -160,5 +160,12 @@ public class Movimiento : MonoBehaviour
             other.GetComponent<IHabilidadesManager>().ActivarHabilidad();
             velocidadMovimiento = GameManager.Instance.velocidadBase;
         }
+
+        if (other.gameObject.tag == "Armas")
+        {
+            other.GetComponent<IRecogerArmas>().armaRecolectada();
+        }
+        // prueba
+        //Instantiate(bazooka, Arma)
     }
 }

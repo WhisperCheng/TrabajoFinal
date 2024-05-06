@@ -10,7 +10,7 @@ public class CambioArmas : MonoBehaviour
 
     public int armaSeleccionada;
     public float cambioArmaRueda;
-    public GameObject fpsCamera;
+    GameObject armaActiva;
     PlayerInput playerInput;
 
     // Start is called before the first frame update
@@ -27,6 +27,8 @@ public class CambioArmas : MonoBehaviour
     {
         //Se encarga de recibir el input de la rueda del raton en positivo o negativo
         cambioArmaRueda = playerInput.actions["CambiarArma"].ReadValue<float>();
+
+                //if (playerInput.actions["Disparando"].IsPressed()) Debug.Log("Pulsando el boton");
 
         //Para comprobar las armas
         int previaArma = armaSeleccionada;
@@ -65,31 +67,34 @@ public class CambioArmas : MonoBehaviour
 
         foreach (Transform arma in transform) 
         {
-            if (numArma ==  armaSeleccionada)
+            if (numArma == armaSeleccionada)
+            {
                 arma.gameObject.SetActive(true);
+                armaActiva = arma.gameObject;
+            }
+
             else
+            {
                 arma.gameObject.SetActive(false);
+            }
             numArma++;
         }
     }
-
-    //Se encarga de recibir el input Click izquierdo para disparar
     public void MiInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
+        //si el arma es automatica
+        if (context.phase == InputActionPhase.Performed && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
         {
-            Disparo();
+            if (playerInput.actions["Disparando"].IsPressed())
+            {
+                Debug.Log(context.phase);
+                armaActiva.GetComponent<ArmasDatos>().Disparar();
+            }
         }
-    }
-
-    //Se encarga de disparar el rayo para el disparo
-    void Disparo() 
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, Mathf.Infinity))
+        // si el arma es semi
+        if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
         {
-            Debug.Log(hit.transform.name);
+            armaActiva.GetComponent<ArmasDatos>().Disparar();
         }
     }
 }

@@ -432,13 +432,14 @@ GameObject:
   - component: {fileID: 8599294285733603368}
   - component: {fileID: 6426686566240456184}
   - component: {fileID: 1521474326172650422}
+  - component: {fileID: 7139186046230504900}
   m_Layer: 0
   m_Name: Pistola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8599294285733603368
 Transform:
   m_ObjectHideFlags: 0
@@ -447,16 +448,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7983539342144759161}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0.101866975, z: 0}
-  m_LocalScale: {x: 35.87767, y: 35.87767, z: 16.471764}
+  m_LocalScale: {x: 35.87767, y: 35.877666, z: 16.471762}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 436582377711689296}
   - {fileID: 6830563829546342424}
   - {fileID: 7898452477131955129}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &6426686566240456184
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -508,6 +509,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7139186046230504900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983539342144759161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137092a776d86074abdd0653860d4b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "da\xF1o": 0
+  rango: 0
+  fpsCamera: {fileID: 0}
 --- !u!1 &7989972921601049278
 GameObject:
   m_ObjectHideFlags: 0
