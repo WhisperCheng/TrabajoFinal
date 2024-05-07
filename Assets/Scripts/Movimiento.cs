@@ -8,6 +8,10 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Movimiento : MonoBehaviour
 {
+    //Declaracion por ahora
+    public CambioArmas cambioArmas;
+
+
     //Declaraciones
     PlayerInput playerInput;
     CharacterController characterController;
@@ -142,6 +146,16 @@ public class Movimiento : MonoBehaviour
         else if (cooldownDash >= 0.1)
         {
             velocidadMovimiento = GameManager.Instance.velocidadBase;
+        }
+    }
+
+    public void Recarga(InputAction.CallbackContext context)
+    {
+        Debug.Log("Recarga");
+        if (context.started && cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
+        {
+            Debug.Log("Recargando");
+            cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes = cambioArmas.armaActiva.GetComponent<ArmasDatos>().cargador;
         }
     }
 

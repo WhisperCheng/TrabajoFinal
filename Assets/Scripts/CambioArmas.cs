@@ -10,7 +10,7 @@ public class CambioArmas : MonoBehaviour
 
     public int armaSeleccionada;
     public float cambioArmaRueda;
-    GameObject armaActiva;
+    public GameObject armaActiva;
     PlayerInput playerInput;
 
     // Start is called before the first frame update
@@ -58,7 +58,7 @@ public class CambioArmas : MonoBehaviour
         }
 
         //Se encarga de que si el arma es automatica se mantenga el fuego constante
-        //Depenediendo del arma activa tendra mayor cadencia o no
+        //Dependiendo del valor de la cadencia del arma tendra mayor velocidad de disparo o menor
         if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
         {
             if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar)
@@ -66,12 +66,31 @@ public class CambioArmas : MonoBehaviour
                 if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
                 { 
                     armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
-                    Debug.Log("Se a mantenido");
+                    Debug.Log("Se a mantenido automatico");
                     armaActiva.GetComponent<ArmasDatos>().Disparar();
                     armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
                 }
             }
         }
+        /*else if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
+        {
+            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar)
+            {
+                if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
+                {
+                    armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
+                    Debug.Log("Se a mantenido semiautomatico");
+                    armaActiva.GetComponent<ArmasDatos>().Disparar();
+                    armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
+                }
+            }
+        }*/
+        /*if (playerInput.actions["Recarga"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().balasRestantes < armaActiva.GetComponent<ArmasDatos>().cargador)
+        {
+            Debug.Log("Recargando");
+            armaActiva.GetComponent<ArmasDatos>().balasRestantes = armaActiva.GetComponent<ArmasDatos>().cargador;
+        }*/
+
     }
 
     //Se encarga de activar y desactivar el arma seleccionada
@@ -96,10 +115,24 @@ public class CambioArmas : MonoBehaviour
     }
     public void MiInput(InputAction.CallbackContext context)
     {
+        Debug.Log("Disparo Semiautomatico");
         // Si el arma es semiAutomatica se ejecuta este apartado.
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
         {
-            armaActiva.GetComponent<ArmasDatos>().Disparar();
+            if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
+            { 
+                armaActiva.GetComponent<ArmasDatos>().Disparar();
+                armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
+            }
         }
     }
+    /*public void Recarga(InputAction.CallbackContext context)
+    {
+        Debug.Log("Recarga");
+        if (context.started && armaActiva.GetComponent<ArmasDatos>().balasRestantes < armaActiva.GetComponent<ArmasDatos>().cargador)
+        {
+            Debug.Log("Recargando");
+            armaActiva.GetComponent<ArmasDatos>().balasRestantes = armaActiva.GetComponent<ArmasDatos>().cargador;
+        }
+    }*/
 }
