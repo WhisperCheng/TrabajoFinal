@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class Rifle : ArmasDatos
+public class Rifle : ArmasDatos, IRecogerArmas
 {
+
     // Start is called before the first frame update
     new void Start()
     {
@@ -22,5 +24,12 @@ public class Rifle : ArmasDatos
         {
             Debug.Log(hit.transform.name);
         }
+    }
+
+    public void armaRecolectada()
+    {
+        gameObject.SetActive(false);
+        Instantiate(transform, armaHolster.transform.position, armaHolster.transform.rotation, armaHolster.transform);
+        Destroy(gameObject);
     }
 }

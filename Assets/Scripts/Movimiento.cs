@@ -8,9 +8,8 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Movimiento : MonoBehaviour
 {
-    //Declaracion por ahora
+    //Declaracion del Script de las armas para la recarga
     public CambioArmas cambioArmas;
-
 
     //Declaraciones
     PlayerInput playerInput;
@@ -149,6 +148,8 @@ public class Movimiento : MonoBehaviour
         }
     }
 
+    //Se encarga de la recarga de las armas
+    //Esta en este script ya que el InputSystem de Unity da bastantes fallos y se tuvo que mover a este script para el correcto funcionamiento
     public void Recarga(InputAction.CallbackContext context)
     {
         Debug.Log("Recarga");
@@ -166,7 +167,7 @@ public class Movimiento : MonoBehaviour
         Gizmos.DrawRay(transform.position, direccionGizmo);
     }
 
-    //Al colisionar con los objetos que representan las habilidades se activan y escalan.
+    //Al colisionar con los objetos que representan las habilidades se activan y tambien las armas se equipan.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Habilidad")
@@ -175,11 +176,9 @@ public class Movimiento : MonoBehaviour
             velocidadMovimiento = GameManager.Instance.velocidadBase;
         }
 
-        if (other.gameObject.tag == "Armas")
+        if (other.gameObject.tag == "Arma")
         {
             other.GetComponent<IRecogerArmas>().armaRecolectada();
         }
-        // prueba
-        //Instantiate(bazooka, Arma)
     }
 }

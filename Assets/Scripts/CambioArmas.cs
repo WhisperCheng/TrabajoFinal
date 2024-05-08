@@ -8,9 +8,14 @@ using UnityEngine.InputSystem;
 public class CambioArmas : MonoBehaviour
 {
 
+    //Variables necesarias para saber que arma esta seleccionada y el poder hacer el cambio de arma
     public int armaSeleccionada;
     public float cambioArmaRueda;
+
+    //Declaracion para activar el arma y los datos que se tiene en las manos
     public GameObject armaActiva;
+
+    //Declaraciones para el input de la rueda del raton
     PlayerInput playerInput;
 
     // Start is called before the first frame update
@@ -72,25 +77,6 @@ public class CambioArmas : MonoBehaviour
                 }
             }
         }
-        /*else if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
-        {
-            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar)
-            {
-                if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
-                {
-                    armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
-                    Debug.Log("Se a mantenido semiautomatico");
-                    armaActiva.GetComponent<ArmasDatos>().Disparar();
-                    armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
-                }
-            }
-        }*/
-        /*if (playerInput.actions["Recarga"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().balasRestantes < armaActiva.GetComponent<ArmasDatos>().cargador)
-        {
-            Debug.Log("Recargando");
-            armaActiva.GetComponent<ArmasDatos>().balasRestantes = armaActiva.GetComponent<ArmasDatos>().cargador;
-        }*/
-
     }
 
     //Se encarga de activar y desactivar el arma seleccionada
@@ -113,10 +99,10 @@ public class CambioArmas : MonoBehaviour
             numArma++;
         }
     }
+    //En el caso de que el booleano del arma automatica esta en falso se ejecuta este apartado para el disparo semiautomatico
     public void MiInput(InputAction.CallbackContext context)
     {
         Debug.Log("Disparo Semiautomatico");
-        // Si el arma es semiAutomatica se ejecuta este apartado.
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
         {
             if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
@@ -126,13 +112,4 @@ public class CambioArmas : MonoBehaviour
             }
         }
     }
-    /*public void Recarga(InputAction.CallbackContext context)
-    {
-        Debug.Log("Recarga");
-        if (context.started && armaActiva.GetComponent<ArmasDatos>().balasRestantes < armaActiva.GetComponent<ArmasDatos>().cargador)
-        {
-            Debug.Log("Recargando");
-            armaActiva.GetComponent<ArmasDatos>().balasRestantes = armaActiva.GetComponent<ArmasDatos>().cargador;
-        }
-    }*/
 }

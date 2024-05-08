@@ -14,6 +14,10 @@ public class MovimientoCamara : MonoBehaviour
     //Variables transform para la rotacion del personaje
     public Transform cuerpoPersonaje;
 
+    //Declaracion del Vector2 para el movimiento de la camara
+
+    public Vector2 inputMovimientoCamara;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,7 @@ public class MovimientoCamara : MonoBehaviour
     void Update()
     {
         //Todo el movimiento de la camara en primera persona
-        Vector2 inputMovimientoCamara = playerInput.actions["Look"].ReadValue<Vector2>() * GameManager.Instance.sensibilidad * Time.deltaTime;
+        inputMovimientoCamara = playerInput.actions["Look"].ReadValue<Vector2>() * GameManager.Instance.sensibilidad * Time.deltaTime;
 
         rotacionVertical -= inputMovimientoCamara.y;
         rotacionVertical = Mathf.Clamp(rotacionVertical, -90, 90);

@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
     public float puntosVida;
     public int saltosExtrasBase;
 
-    //Datos Armas
-    public int daño;
-
     public static GameManager Instance { get; private set; }
 
     private void Awake()
