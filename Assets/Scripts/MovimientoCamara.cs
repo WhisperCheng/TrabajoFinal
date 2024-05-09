@@ -15,7 +15,6 @@ public class MovimientoCamara : MonoBehaviour
     public Transform cuerpoPersonaje;
 
     //Declaracion del Vector2 para el movimiento de la camara
-
     public Vector2 inputMovimientoCamara;
 
     // Start is called before the first frame update

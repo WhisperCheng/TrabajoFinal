@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-public abstract class ArmasDatos : MonoBehaviour
+public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
 {
     //Variables de datos generales que tendran las armas
     public int daño;
@@ -30,28 +30,39 @@ public abstract class ArmasDatos : MonoBehaviour
     public float intensidadRotacion;
     public float smoothRotacion;
 
+    //Variable quaternion para el origen de la rotacion
     public Quaternion rotacionOrigen;
 
-    //Hablar con el maestro para ver como hacer que detecte el script sin tener que asignarlo mediante interfaz de Unity
+    //Declaracion del script para conseguir el movimiento del raton
     public MovimientoCamara Vector2moveCamera;
 
     protected void Start()
     {
         fpsCamera = GameObject.Find("CamaraPrimeraPersona");
         armaHolster = GameObject.Find("Arma");
+        Vector2moveCamera = GameObject.Find("CamaraPrimeraPersona").GetComponent<MovimientoCamara>();
         rango = Mathf.Infinity;
+        rotacionOrigen = transform.localRotation;
         tiempoParaDisparar = 0;
     }
 
+    //Se encarga del disparo del arma
     public abstract void Disparar();
 
-    //Nota: posibles datos necesarios para mas tarde
-
-    /*public void morir()
+    //Se encarga del balanceo del arma
+    public void balanceoArma()
     {
-        Destroy(this.gameObject);
-    }*/
+        Quaternion t_adj_x = Quaternion.AngleAxis(intensidadRotacion * Vector2moveCamera.inputMovimientoCamara.x, Vector3.up);
+        Quaternion t_adj_y = Quaternion.AngleAxis(intensidadRotacion * Vector2moveCamera.inputMovimientoCamara.y, Vector3.right);
+        Quaternion target_rotation = rotacionOrigen * t_adj_x * t_adj_y;
 
-    //abstract y override
-
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, target_rotation, Time.deltaTime * smoothRotacion);
+    }
+    //Se encarga del recoger del arma y ponerlo en el ArmaHolster
+    public void armaRecolectada()
+    {
+        gameObject.SetActive(false);
+        Instantiate(transform, armaHolster.transform.position, armaHolster.transform.rotation, armaHolster.transform);
+        Destroy(gameObject);
+    }
 }

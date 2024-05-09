@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -962,17 +962,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3468088768499869524, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
   m_PrefabInstance: {fileID: 34545403}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &890895762 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4782441197798962614, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
-  m_PrefabInstance: {fileID: 34545403}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f4e79a72c01db947a7ad523e053669f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,7 +1109,7 @@ PrefabInstance:
     - target: {fileID: 7139186046230504900, guid: 329a7e62303b7344baacc0e0c227bd32, type: 3}
       propertyPath: Vector2moveCamera
       value: 
-      objectReference: {fileID: 890895762}
+      objectReference: {fileID: 0}
     - target: {fileID: 7983539342144759161, guid: 329a7e62303b7344baacc0e0c227bd32, type: 3}
       propertyPath: m_Name
       value: Pistola

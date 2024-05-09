@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Rifle : ArmasDatos, IRecogerArmas
+public class Rifle : ArmasDatos
 {
 
     // Start is called before the first frame update
@@ -15,21 +15,23 @@ public class Rifle : ArmasDatos, IRecogerArmas
         cargador = 50;
         balasRestantes = cargador;
         armaAutomatica = true;
+
+        //Ajustar los valores para el balanceo del arma
+        intensidadRotacion = 10;
+        smoothRotacion = 10;
     }
+    void Update()
+    {
+        balanceoArma();
+    }
+
     public override void Disparar()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, Mathf.Infinity))
+        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango))
         {
             Debug.Log(hit.transform.name);
         }
-    }
-
-    public void armaRecolectada()
-    {
-        gameObject.SetActive(false);
-        Instantiate(transform, armaHolster.transform.position, armaHolster.transform.rotation, armaHolster.transform);
-        Destroy(gameObject);
     }
 }
