@@ -1318,6 +1318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armaSeleccionada: 0
   cambioArmaRueda: 0
+  cooldownCambioArmas: 0
   armaActiva: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
