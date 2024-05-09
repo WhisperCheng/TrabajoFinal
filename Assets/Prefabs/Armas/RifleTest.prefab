@@ -119,12 +119,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "da\xF1o": 0
-  rango: 0
   cadencia: 0
   tiempoParaDisparar: 0
+  rango: 0
   cargador: 0
   balasRestantes: 0
   armaAutomatica: 0
   fpsCamera: {fileID: 0}
   armaHolster: {fileID: 0}
-  rifle: {fileID: 7356116023651223926}
+  intensidadRotacion: 0
+  smoothRotacion: 0
+  rotacionOrigen: {x: 0, y: 0, z: 0, w: 0}
+  Vector2moveCamera: {fileID: 0}

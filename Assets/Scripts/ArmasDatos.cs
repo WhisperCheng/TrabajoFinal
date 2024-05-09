@@ -12,6 +12,8 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     public float cadencia;
     public float tiempoParaDisparar;
 
+    public bool armaPorRecolectar;
+
     //Variable necesaria que tendran todas las armas siempre con el mismo valor
     public float rango;
 
@@ -61,8 +63,12 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     //Se encarga del recoger del arma y ponerlo en el ArmaHolster
     public void armaRecolectada()
     {
-        gameObject.SetActive(false);
-        Instantiate(transform, armaHolster.transform.position, armaHolster.transform.rotation, armaHolster.transform);
-        Destroy(gameObject);
+        if (armaPorRecolectar == false)
+        {
+            armaPorRecolectar = true;
+            gameObject.SetActive(false);
+            Instantiate(transform, armaHolster.transform.position, armaHolster.transform.rotation, armaHolster.transform);
+            Destroy(gameObject);
+        }
     }
 }

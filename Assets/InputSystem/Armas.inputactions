@@ -37,10 +37,21 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "e92bd1ff-df97-4560-bb0f-46b301d1b694",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disparando",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "CambioArmaRueda",
                     "id": "476b0806-0746-4f93-a134-79a95338bfd9",
                     "path": "1DAxis",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "CambiarArma",
@@ -62,6 +73,28 @@
                     "name": "positive",
                     "id": "b11d82b0-5366-497e-a6eb-028ee389bf16",
                     "path": "<Mouse>/scroll/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CambiarArma",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "5bc54af4-235f-46d9-ae3d-bdb686e1da07",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CambiarArma",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "7c026955-c3e7-4161-9d15-9e319b23c869",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

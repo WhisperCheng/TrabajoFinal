@@ -98,6 +98,8 @@ public class Movimiento : MonoBehaviour
     }
 
     //Se encarga de hacer el slide durante X segundos
+
+    //Arreglar el escalado del personaje con el arma IMPORTANTE
     public void slide(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
@@ -152,8 +154,7 @@ public class Movimiento : MonoBehaviour
     //Esta en este script ya que el InputSystem de Unity da bastantes fallos y se tuvo que mover a este script para el correcto funcionamiento
     public void Recarga(InputAction.CallbackContext context)
     {
-        Debug.Log("Recarga");
-        if (context.started && cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
+        if (context.started && cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes < cambioArmas.armaActiva.GetComponent<ArmasDatos>().cargador)
         {
             Debug.Log("Recargando");
             cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes = cambioArmas.armaActiva.GetComponent<ArmasDatos>().cargador;

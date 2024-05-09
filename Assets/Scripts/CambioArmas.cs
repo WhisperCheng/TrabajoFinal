@@ -12,6 +12,8 @@ public class CambioArmas : MonoBehaviour
     public int armaSeleccionada;
     public float cambioArmaRueda;
 
+    public float cooldownCambioArmas;
+
     //Declaracion para activar el arma y los datos que se tiene en las manos
     public GameObject armaActiva;
 
@@ -30,6 +32,7 @@ public class CambioArmas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cooldownCambioArmas += Time.deltaTime;
         //Se encarga de recibir el input de la rueda del raton en positivo o negativo
         cambioArmaRueda = playerInput.actions["CambiarArma"].ReadValue<float>();
 
@@ -37,7 +40,7 @@ public class CambioArmas : MonoBehaviour
         int previaArma = armaSeleccionada;
 
         //Se encarga de cambiar al arma que corresponde depenediendo del valor que tenga el float
-        if (cambioArmaRueda > 0f)
+        if (cambioArmaRueda > 0f && cooldownCambioArmas > 0.2f)
         {
             if (armaSeleccionada >= transform.childCount - 1)
             {
@@ -45,8 +48,9 @@ public class CambioArmas : MonoBehaviour
             }
             else
                 armaSeleccionada++;
+            cooldownCambioArmas = 0f;
         }
-        if (cambioArmaRueda < 0f)
+        if (cambioArmaRueda < 0f && cooldownCambioArmas > 0.2f)
         {
             if (armaSeleccionada <= 0f)
             {
@@ -54,6 +58,7 @@ public class CambioArmas : MonoBehaviour
             }
             else
                 armaSeleccionada--;
+            cooldownCambioArmas = 0f;
         }
 
         //Cambia al arma que corresponde

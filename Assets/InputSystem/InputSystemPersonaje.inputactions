@@ -176,7 +176,7 @@
                 {
                     "name": "",
                     "id": "5f52b8fa-9f75-4f69-a76b-69edcbddbc5b",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -198,7 +198,7 @@
                 {
                     "name": "",
                     "id": "629995ef-9e1f-4212-bf32-a0482dee0456",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -220,7 +220,7 @@
                 {
                     "name": "",
                     "id": "ee5d8b06-7739-4f57-aaed-bf8cd93d72c4",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -232,6 +232,17 @@
                     "name": "",
                     "id": "25eb8f8e-c24d-417c-ab3a-45891abc7d09",
                     "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recarga",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ce44558-6241-40fb-a5f6-7a2873107ff5",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
