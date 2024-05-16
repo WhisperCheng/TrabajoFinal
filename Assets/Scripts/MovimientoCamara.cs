@@ -25,11 +25,6 @@ public class MovimientoCamara : MonoBehaviour
         //Sirve para hacer desaperecer el raton
         Cursor.lockState = CursorLockMode.Locked;
     }
-
-    public void prueba(InputAction.CallbackContext cc)
-    {
-        Debug.Log("algo");}
-
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +36,5 @@ public class MovimientoCamara : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(rotacionVertical, 0, 0);
         cuerpoPersonaje.Rotate(Vector3.up * inputMovimientoCamara.x);
-        Debug.Log(playerInput.actions["Look"].ReadValue<Vector2>());
     }
 }

@@ -71,15 +71,12 @@ public class CambioArmas : MonoBehaviour
         //Dependiendo del valor de la cadencia del arma tendra mayor velocidad de disparo o menor
         if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
         {
-            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar)
+            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar && armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
             {
-                if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
-                { 
-                    armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
-                    Debug.Log("Se a mantenido automatico");
-                    armaActiva.GetComponent<ArmasDatos>().Disparar();
-                    armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
-                }
+                armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
+                Debug.Log("Se a mantenido automatico");
+                armaActiva.GetComponent<ArmasDatos>().Disparar();
+                armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
             }
         }
     }
