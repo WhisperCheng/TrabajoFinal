@@ -54,11 +54,14 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     //Se encarga del balanceo del arma
     public void balanceoArma()
     {
+        if (armaPorRecolectar == true)
+        {
         Quaternion t_adj_x = Quaternion.AngleAxis(intensidadRotacion * Vector2moveCamera.inputMovimientoCamara.x, Vector3.up);
         Quaternion t_adj_y = Quaternion.AngleAxis(intensidadRotacion * Vector2moveCamera.inputMovimientoCamara.y, Vector3.right);
         Quaternion target_rotation = rotacionOrigen * t_adj_x * t_adj_y;
 
         transform.localRotation = Quaternion.Lerp(transform.localRotation, target_rotation, Time.deltaTime * smoothRotacion);
+        }
     }
     //Se encarga del recoger del arma y ponerlo en el ArmaHolster
     public void armaRecolectada()

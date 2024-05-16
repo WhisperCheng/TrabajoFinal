@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6768936264108661723}
   - component: {fileID: 8684794913874738837}
   - component: {fileID: 1265342041898540555}
+  - component: {fileID: 1481337517169798312}
   m_Layer: 0
   m_Name: CuerpoContenedorNegro
   m_TagString: Untagged
@@ -85,6 +86,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1481337517169798312
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322786454683294266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5663998047154002272, guid: d482bb508b27bc84cbe761253b43d143, type: 3}
 --- !u!1 &2519104690824147753
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +119,7 @@ GameObject:
   - component: {fileID: 2747462354511937651}
   - component: {fileID: 7298543048678443776}
   - component: {fileID: 7166056496392852655}
+  - component: {fileID: 1563697891963601656}
   m_Layer: 0
   m_Name: PuertaDelanteIzqNegro
   m_TagString: Untagged
@@ -169,6 +193,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1563697891963601656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519104690824147753}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1159230367999701646, guid: d482bb508b27bc84cbe761253b43d143, type: 3}
 --- !u!1 &2614045434826675747
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +226,7 @@ GameObject:
   - component: {fileID: 1628766358180907678}
   - component: {fileID: 1876878394412854744}
   - component: {fileID: 7178671591540054800}
+  - component: {fileID: 8911683386212813339}
   m_Layer: 0
   m_Name: PuertaTraseraIzqNegro
   m_TagString: Untagged
@@ -253,6 +300,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8911683386212813339
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2614045434826675747}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 27723637055110293, guid: d482bb508b27bc84cbe761253b43d143, type: 3}
 --- !u!1 &3103092924433977595
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +333,7 @@ GameObject:
   - component: {fileID: 2161461802074596402}
   - component: {fileID: 3798687130182567476}
   - component: {fileID: 7641384434009523503}
+  - component: {fileID: 1608067358267787146}
   m_Layer: 0
   m_Name: PuertaTraseraDerNegro
   m_TagString: Untagged
@@ -337,6 +407,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1608067358267787146
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103092924433977595}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3231643795167691290, guid: d482bb508b27bc84cbe761253b43d143, type: 3}
 --- !u!1 &4812043526044607756
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +440,7 @@ GameObject:
   - component: {fileID: 2292822765511860575}
   - component: {fileID: 4285252872756918190}
   - component: {fileID: 528957266637028344}
+  - component: {fileID: 8046335561336939832}
   m_Layer: 0
   m_Name: PuertaDelanteDerNegro
   m_TagString: Untagged
@@ -421,6 +514,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8046335561336939832
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4812043526044607756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3195798229273052120, guid: d482bb508b27bc84cbe761253b43d143, type: 3}
 --- !u!1 &6457265954063654087
 GameObject:
   m_ObjectHideFlags: 0

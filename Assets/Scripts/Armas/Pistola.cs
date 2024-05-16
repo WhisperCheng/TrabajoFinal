@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Pistola : ArmasDatos
 {
+    public GameObject EnemigoScript;
     // sobrecarga de metodos utilizada
     new void Start()
     {
@@ -15,6 +16,7 @@ public class Pistola : ArmasDatos
         cargador = 30;
         balasRestantes = cargador;
         armaAutomatica = false;
+        armaPorRecolectar = true;
 
         //Ajustar los valores para mejorar el balanceo
         intensidadRotacion = 10;
@@ -30,6 +32,10 @@ public class Pistola : ArmasDatos
 
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango)) 
         {
+            if (hit.collider.tag == "Enemigo")
+            {
+                hit.collider.gameObject.GetComponent<Enemigo>().hitDaño(daño);
+            }
             Debug.Log(hit.transform.name);
         }
     }

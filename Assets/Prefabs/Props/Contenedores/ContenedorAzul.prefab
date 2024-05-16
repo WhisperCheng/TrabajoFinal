@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 7260029225723023276}
   - component: {fileID: 9126787646773018361}
   - component: {fileID: 2884170218419210891}
+  - component: {fileID: 1736468484475296738}
   m_Layer: 0
   m_Name: PuertaTraseraDerAzul.001
   m_TagString: Untagged
@@ -120,6 +121,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1736468484475296738
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3128013840498582682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6295033960232068490, guid: 2514adc5ab572214296b87ff5afeb40b, type: 3}
 --- !u!1 &4259516397935493906
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +154,7 @@ GameObject:
   - component: {fileID: 119441430909141948}
   - component: {fileID: 7039253393054138781}
   - component: {fileID: 1992006404342806446}
+  - component: {fileID: 4801027142545497147}
   m_Layer: 0
   m_Name: PuertaDelanteIzqAzul.001
   m_TagString: Untagged
@@ -204,6 +228,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4801027142545497147
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259516397935493906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6967531314335582109, guid: 2514adc5ab572214296b87ff5afeb40b, type: 3}
 --- !u!1 &5541854437139466694
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +261,7 @@ GameObject:
   - component: {fileID: 6804192193070777797}
   - component: {fileID: 6044157194879175601}
   - component: {fileID: 3708999352974716549}
+  - component: {fileID: 4042640837336725651}
   m_Layer: 0
   m_Name: CuerpoContenedorAzul.001
   m_TagString: Untagged
@@ -288,6 +335,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4042640837336725651
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541854437139466694}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8966310148671774462, guid: 2514adc5ab572214296b87ff5afeb40b, type: 3}
 --- !u!1 &7231598820651664724
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +368,7 @@ GameObject:
   - component: {fileID: 1334314396737181718}
   - component: {fileID: 7940676327979938491}
   - component: {fileID: 5535926974546859236}
+  - component: {fileID: 6880434027090705936}
   m_Layer: 0
   m_Name: PuertaTraseraIzqAzul.001
   m_TagString: Untagged
@@ -372,6 +442,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6880434027090705936
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231598820651664724}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8731325231094748582, guid: 2514adc5ab572214296b87ff5afeb40b, type: 3}
 --- !u!1 &8127349751640064162
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +475,7 @@ GameObject:
   - component: {fileID: 2649782378584390419}
   - component: {fileID: 2223413739928972525}
   - component: {fileID: 2748990076824857628}
+  - component: {fileID: 542741083741214279}
   m_Layer: 0
   m_Name: PuertaDelanteDerAzul.001
   m_TagString: Untagged
@@ -456,3 +549,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &542741083741214279
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127349751640064162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -621136179302408620, guid: 2514adc5ab572214296b87ff5afeb40b, type: 3}

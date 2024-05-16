@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 7100942408469065161}
   - component: {fileID: 8808199480464277175}
   - component: {fileID: 5261459277907110362}
+  - component: {fileID: 8020815471460442808}
   m_Layer: 0
   m_Name: TapaBarrilMadera
   m_TagString: Untagged
@@ -201,6 +202,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8020815471460442808
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477317382005572011}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8968414876447542734, guid: e1eb69a57d049b4478b8fd32cffe6dad, type: 3}
 --- !u!1 &9014775549439258975
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +235,7 @@ GameObject:
   - component: {fileID: 7851588644347699608}
   - component: {fileID: 7940292241405046761}
   - component: {fileID: 146325489541526200}
+  - component: {fileID: 7160502248042315781}
   m_Layer: 0
   m_Name: BarrilMadera
   m_TagString: Untagged
@@ -285,3 +309,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7160502248042315781
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014775549439258975}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1123670897228210948, guid: e1eb69a57d049b4478b8fd32cffe6dad, type: 3}

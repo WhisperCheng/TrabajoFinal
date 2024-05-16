@@ -31,6 +31,10 @@ public class Rifle : ArmasDatos
 
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango))
         {
+            if (hit.collider.tag == "Enemigo")
+            {
+                hit.collider.gameObject.GetComponent<Enemigo>().hitDaño(daño);
+            }
             Debug.Log(hit.transform.name);
         }
     }
