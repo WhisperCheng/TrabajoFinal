@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Pistola : ArmasDatos
 {
-    public GameObject EnemigoScript;
     // sobrecarga de metodos utilizada
     new void Start()
     {

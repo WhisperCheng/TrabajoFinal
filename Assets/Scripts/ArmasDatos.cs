@@ -12,6 +12,7 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     public float cadencia;
     public float tiempoParaDisparar;
 
+    //Bool utilizado para arreglar un pequeño bug que habia con el swing de las armas NO recolectadas
     public bool armaPorRecolectar;
 
     //Variable necesaria que tendran todas las armas siempre con el mismo valor

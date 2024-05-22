@@ -12,6 +12,7 @@ public class CambioArmas : MonoBehaviour
     public int armaSeleccionada;
     public float cambioArmaRueda;
 
+    //Cooldown creado para el cambio de armas ya que con el Mando daba fallo y hacia el cambio de golpe
     public float cooldownCambioArmas;
 
     //Declaracion para activar el arma y los datos que se tiene en las manos

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1667998935561717745}
   - component: {fileID: 6668121912521410586}
   - component: {fileID: -8365274872929105951}
+  - component: {fileID: 922783731872567614}
   m_Layer: 0
   m_Name: BebidaEnergetica
   m_TagString: Habilidad
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2.6097572}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.4697563}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,3 +108,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9696155, y: 2.0000005, z: 1.9381548}
   m_Center: {x: 0, y: 0, z: 0.010307613}
+--- !u!114 &922783731872567614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7566287851194284851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275c9dc7e79bad0458eb3880214f09e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
