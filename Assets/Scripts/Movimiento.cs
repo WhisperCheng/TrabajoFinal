@@ -181,5 +181,9 @@ public class Movimiento : MonoBehaviour
         {
             other.GetComponent<IRecogerArmas>().armaRecolectada();
         }
+        if (other.gameObject.tag == "Consumible")
+        {
+            other.GetComponent<IRecogerConsumible>().consumibleRecolectado();
+        }
     }
 }

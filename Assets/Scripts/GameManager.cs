@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float reduccionDaño;
     public float puntosVida;
     public int saltosExtrasBase;
+    public int consumiblesBase;
 
     public static GameManager Instance { get; private set; }
 
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
             saltosExtrasBase = 1;
             reduccionDaño = 0;
             puntosVida = 100;
+            consumiblesBase = 3;
         }
     }
 
@@ -52,5 +54,9 @@ public class GameManager : MonoBehaviour
     public void AumentarReduccionDaño()
     {
         reduccionDaño += 10;
+    }
+    public void AumentarCapacidadConsumibles()
+    {
+        consumiblesBase += 1;
     }
 }
