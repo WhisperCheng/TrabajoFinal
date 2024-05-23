@@ -76,6 +76,7 @@ public class CambioArmas : MonoBehaviour
             {
                 armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
                 Debug.Log("Se a mantenido automatico");
+                armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
                 armaActiva.GetComponent<ArmasDatos>().Disparar();
                 armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
             }
@@ -109,7 +110,9 @@ public class CambioArmas : MonoBehaviour
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
         {
             if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
-            { 
+            {
+                armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
+
                 armaActiva.GetComponent<ArmasDatos>().Disparar();
                 armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
             }

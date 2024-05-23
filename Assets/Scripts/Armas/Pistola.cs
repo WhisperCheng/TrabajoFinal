@@ -16,10 +16,6 @@ public class Pistola : ArmasDatos
         balasRestantes = cargador;
         armaAutomatica = false;
         armaPorRecolectar = true;
-
-        //Ajustar los valores para mejorar el balanceo
-        intensidadRotacion = 10;
-        smoothRotacion = 10;
     }
     void Update()
     {

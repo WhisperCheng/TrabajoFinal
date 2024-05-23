@@ -1,37 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
-    //Debo comprobar todo esto en clase que tengo los proyectos correspondientes
-
     public int vidaEnemigo;
-    float fuerzagravedad;
-    Vector3 gravedadVector;
-    CharacterController characterController;
+    public float distanciaEnemigoPersonaje;
     public GameObject personajeObjetivo;
+    bool limiteDistancia;
+    NavMeshAgent agent;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         vidaEnemigo = 100;
-        fuerzagravedad = -9.81f;
-        characterController = GetComponent<CharacterController>();
         personajeObjetivo = GameObject.Find("Personaje");
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        gravedadVector.y += fuerzagravedad * Time.deltaTime;
+        distanciaEnemigoPersonaje = Vector3.Distance(agent.transform.position, personajeObjetivo.transform.position);
 
-        characterController.Move(gravedadVector * Time.deltaTime);
+        if (distanciaEnemigoPersonaje >= 15 && limiteDistancia == false) 
+        {
+            agent.destination = personajeObjetivo.transform.position;
+        }
+        else if (distanciaEnemigoPersonaje < 15) 
+        {
+            agent.destination = agent.transform.position;
+            limiteDistancia = true;
+        }
     }
     public void hitDaño(int dañoArma)
     {
         vidaEnemigo -= dañoArma;
-        Debug.Log("Enemigo: Eh recibido da�o");
+        Debug.Log("Enemigo: Eh recibido daño");
         if (vidaEnemigo <= 0)
         {
             Destroy(gameObject);

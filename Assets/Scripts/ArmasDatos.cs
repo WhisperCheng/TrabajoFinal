@@ -39,11 +39,17 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     //Declaracion del script para conseguir el movimiento del raton
     public MovimientoCamara Vector2moveCamera;
 
+    //Sistema de particulas para hacer el flash del cañon del arma, faltaria ponerle un particula buena
+    //Se debe de asignar el flash del arma desde la interfaz ya que no se como hacerlo mediante codigo
+    public ParticleSystem muzzleFlash;
+
     protected void Start()
     {
         fpsCamera = GameObject.Find("CamaraPrimeraPersona");
         armaHolster = GameObject.Find("Arma");
         Vector2moveCamera = GameObject.Find("CamaraPrimeraPersona").GetComponent<MovimientoCamara>();
+        intensidadRotacion = 5;
+        smoothRotacion = 5;
         rango = Mathf.Infinity;
         rotacionOrigen = transform.localRotation;
         tiempoParaDisparar = 0;

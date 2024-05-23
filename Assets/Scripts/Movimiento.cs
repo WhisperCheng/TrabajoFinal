@@ -105,13 +105,13 @@ public class Movimiento : MonoBehaviour
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
         {
             velocidadMovimiento += 12;
-            transform.localScale = new Vector3 (transform.localScale.x, 0.5f, transform.localScale.z);
+            characterController.height = 1;
             cooldownSlide = 0;
         }
         else
         {
             velocidadMovimiento = GameManager.Instance.velocidadBase;
-            transform.localScale = new Vector3 (transform.localScale.x, 1, transform.localScale.z);
+            characterController.height = 2;
         }
     }
 

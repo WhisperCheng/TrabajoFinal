@@ -15,10 +15,6 @@ public class Rifle : ArmasDatos
         cargador = 50;
         balasRestantes = cargador;
         armaAutomatica = true;
-
-        //Ajustar los valores para el balanceo del arma
-        intensidadRotacion = 10;
-        smoothRotacion = 10;
     }
     void Update()
     {
