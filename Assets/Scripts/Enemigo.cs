@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
+    //Debo comprobar todo esto en clase que tengo los proyectos correspondientes
+
     public int vidaEnemigo;
     float fuerzagravedad;
     Vector3 gravedadVector;
     CharacterController characterController;
-    
-    public transform personajeObjetivo;
+    public GameObject personajeObjetivo;
 
     // Start is called before the first frame update
     void Start()
     {
-        personajeObjetivo = GameObject.Find("Personaje");
         vidaEnemigo = 100;
         fuerzagravedad = -9.81f;
         characterController = GetComponent<CharacterController>();
-        agente = GetComponent<NavMeshAgent>();
+        personajeObjetivo = GameObject.Find("Personaje");
     }
 
     // Update is called once per frame
@@ -28,9 +28,9 @@ public class Enemigo : MonoBehaviour
 
         characterController.Move(gravedadVector * Time.deltaTime);
     }
-    public void hitDa�o(int da�oArma)
+    public void hitDaño(int dañoArma)
     {
-        vidaEnemigo -= da�oArma;
+        vidaEnemigo -= dañoArma;
         Debug.Log("Enemigo: Eh recibido da�o");
         if (vidaEnemigo <= 0)
         {
