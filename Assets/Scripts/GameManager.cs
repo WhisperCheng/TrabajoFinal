@@ -8,9 +8,17 @@ public class GameManager : MonoBehaviour
     public float fuerzaSalto;
     public float sensibilidad;
     public float reduccionDaño;
-    public float puntosVida;
+    public float puntosVidaMaxima;
+    public float puntosVidaActual;
+    public float regeneracionPerSegundoBase;
+    public float regeneracionPerSegundoActual;
+    public float cooldownRegeneracion;
+    public float velocidadActual;
     public int saltosExtrasBase;
     public int consumiblesBase;
+    public int consumiblesRestantes;
+    public int inyeccionesBase;
+    public int inyeccionesRestantes;
 
     public static GameManager Instance { get; private set; }
 
@@ -28,15 +36,35 @@ public class GameManager : MonoBehaviour
             sensibilidad = 20;
             saltosExtrasBase = 1;
             reduccionDaño = 0;
-            puntosVida = 100;
+            puntosVidaMaxima = 100;
+            regeneracionPerSegundoBase = 1;
             consumiblesBase = 3;
+            inyeccionesBase = 1;
+            puntosVidaActual = puntosVidaMaxima;
+            inyeccionesRestantes = inyeccionesBase;
+            velocidadActual = velocidadBase;
+            regeneracionPerSegundoActual = regeneracionPerSegundoBase;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        cooldownRegeneracion += Time.deltaTime;
+
+        regeneracionVida();
+    }
+    public void regeneracionVida()
+    {
+        if (cooldownRegeneracion >= 3)
+        {
+            puntosVidaActual += regeneracionPerSegundoActual * Time.deltaTime;
+
+            if (puntosVidaActual > puntosVidaMaxima)
+            {
+                puntosVidaActual = puntosVidaMaxima;
+            }
+        }
     }
 
     public void AumentarVelocidad()
@@ -58,5 +86,12 @@ public class GameManager : MonoBehaviour
     public void AumentarCapacidadConsumibles()
     {
         consumiblesBase += 1;
+    }
+    public void AumentarNumInyeccion()
+    {
+        if (inyeccionesRestantes == 0)
+        {
+            inyeccionesRestantes = inyeccionesBase;
+        }
     }
 }

@@ -24,7 +24,7 @@ public class Consumible : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         fuerzaLanzamiento = 5;
         radioExplosion = 4;
-        mascaraEnemigo = 1 << 7;
+        mascaraEnemigo = 1 << 8;
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class Consumible : MonoBehaviour
             {
                 hitcollider.GetComponent<Collider>().attachedRigidbody.AddExplosionForce(10, tipoGranada.transform.localPosition, radioExplosion, 77, ForceMode.Impulse);
             }
+            contadorGranada = 0;
         }
-        contadorGranada = 0;
     }
 }

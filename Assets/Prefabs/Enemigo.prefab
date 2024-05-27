@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6952901359350331386}
   - component: {fileID: -5068239924541392930}
   - component: {fileID: 1294072049897533075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemigo
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaEnemigo: 0
+  distanciaEnemigoPersonaje: 0
   personajeObjetivo: {fileID: 0}
 --- !u!136 &1294072049897533075
 CapsuleCollider:

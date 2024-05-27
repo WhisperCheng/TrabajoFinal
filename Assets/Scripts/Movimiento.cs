@@ -21,7 +21,6 @@ public class Movimiento : MonoBehaviour
     public float cooldownDash;
 
     //Variables float "Velocidad"
-    public float velocidadMovimiento;
     public float inercia;
 
     //Variables float "Salto"
@@ -47,7 +46,6 @@ public class Movimiento : MonoBehaviour
         inercia = 0.1f;
         fuerzaGravedad = -9.81f;
         longitudRayo = 1.1f;
-        velocidadMovimiento = GameManager.Instance.velocidadBase;
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
     }
@@ -65,7 +63,7 @@ public class Movimiento : MonoBehaviour
         //Se encarga de recibir el input del teclado y calcular la velocidad de movimiento y añadir la inercia
         inputMovimientoWASD = playerInput.actions["Move"].ReadValue<Vector2>();
         move = transform.right * inputMovimientoWASD.x + transform.forward * inputMovimientoWASD.y;
-        movimiento = Vector3.SmoothDamp(movimiento, move * velocidadMovimiento, ref velocidadDamp, inercia);
+        movimiento = Vector3.SmoothDamp(movimiento, move * GameManager.Instance.velocidadActual, ref velocidadDamp, inercia);
 
         //Se encarga de mover al personaje
         characterController.Move(movimiento * Time.deltaTime);
@@ -104,13 +102,13 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
         {
-            velocidadMovimiento += 12;
+            GameManager.Instance.velocidadActual += 12;
             characterController.height = 1;
             cooldownSlide = 0;
         }
         else
         {
-            velocidadMovimiento = GameManager.Instance.velocidadBase;
+            GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
             characterController.height = 2;
         }
     }
@@ -141,12 +139,12 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
-            velocidadMovimiento +=  50;
+            GameManager.Instance.velocidadActual +=  50;
             cooldownDash = 0;
         }
         else if (cooldownDash >= 0.1)
         {
-            velocidadMovimiento = GameManager.Instance.velocidadBase;
+            GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
         }
     }
 
@@ -174,7 +172,7 @@ public class Movimiento : MonoBehaviour
         if (other.gameObject.tag == "Habilidad")
         {
             other.GetComponent<IHabilidadesManager>().ActivarHabilidad();
-            velocidadMovimiento = GameManager.Instance.velocidadBase;
+            GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
         }
 
         if (other.gameObject.tag == "Arma")
