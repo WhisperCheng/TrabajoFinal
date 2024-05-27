@@ -68,19 +68,7 @@ public class CambioArmas : MonoBehaviour
             ArmaSeleccionada();
         }
 
-        //Se encarga de que si el arma es automatica se mantenga el fuego constante
-        //Dependiendo del valor de la cadencia del arma tendra mayor velocidad de disparo o menor
-        if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
-        {
-            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar && armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
-            {
-                armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
-                Debug.Log("Se a mantenido automatico");
-                armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
-                armaActiva.GetComponent<ArmasDatos>().Disparar();
-                armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
-            }
-        }
+        disparoAutomatico();
     }
 
     //Se encarga de activar y desactivar el arma seleccionada
@@ -104,7 +92,7 @@ public class CambioArmas : MonoBehaviour
         }
     }
     //En el caso de que el booleano del arma automatica esta en falso se ejecuta este apartado para el disparo semiautomatico
-    public void MiInput(InputAction.CallbackContext context)
+    public void disparoSemi(InputAction.CallbackContext context)
     {
         Debug.Log("Disparo Semiautomatico");
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
@@ -113,6 +101,23 @@ public class CambioArmas : MonoBehaviour
             {
                 armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
 
+                armaActiva.GetComponent<ArmasDatos>().Disparar();
+                armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
+            }
+        }
+    }
+
+    //Se encarga de que si el arma es automatica se mantenga el fuego constante
+    //Dependiendo del valor de la cadencia del arma tendra mayor velocidad de disparo o menor
+    public void disparoAutomatico()
+    {
+        if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
+        {
+            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar && armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
+            {
+                armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
+                Debug.Log("Se a mantenido automatico");
+                armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
                 armaActiva.GetComponent<ArmasDatos>().Disparar();
                 armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
             }

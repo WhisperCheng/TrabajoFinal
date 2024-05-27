@@ -49,6 +49,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Inyeccion",
+                    "type": "Button",
+                    "id": "de013e13-1853-4d1b-b52c-2767368113a4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LanzarGranada",
+                    "type": "Button",
+                    "id": "9195c772-06a7-4d1d-83ba-194b89e70361",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -247,6 +265,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Recarga",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "398d0192-9878-4a4c-95fc-843faac33280",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inyeccion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2f79d10-f13a-4f60-b9af-497b9033c330",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LanzarGranada",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -30,6 +30,16 @@ public class Movimiento : MonoBehaviour
     //Variables bool
     bool colisionSuelo;
 
+    //Variable bool y float relacionado con la Inyeccion
+    public bool efectoInyeccion;
+    public float cooldownEfectoVelocidad;
+
+    //Variable relacionada con los consumibles y las granadas
+    public GameObject granadaPrefab;
+    public GameObject granada;
+    public GameObject salidaGranada;
+    public float fuerzaLanzamiento;
+
     //Variables int
     public int saltosExtrasRestantes;
 
@@ -46,8 +56,10 @@ public class Movimiento : MonoBehaviour
         inercia = 0.1f;
         fuerzaGravedad = -9.81f;
         longitudRayo = 1.1f;
+        fuerzaLanzamiento = 25;
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
+        salidaGranada = GameObject.Find("SalidaConsumibles");
     }
 
     // Update is called once per frame
@@ -57,6 +69,7 @@ public class Movimiento : MonoBehaviour
         cooldownDash += Time.deltaTime;
         cooldownSlide += Time.deltaTime;
         cooldownSalto += Time.deltaTime;
+        cooldownEfectoVelocidad += Time.deltaTime;
     }
     private void FixedUpdate()
     {
@@ -76,6 +89,7 @@ public class Movimiento : MonoBehaviour
 
         //Se encarga de mirar si el personaje esta colisionandio con "algo" para poder saltar
         rayoSalto();
+        efectoInyeccionTiempo();
     }
 
     //Se encarga de el salto del personaje
@@ -142,7 +156,7 @@ public class Movimiento : MonoBehaviour
             GameManager.Instance.velocidadActual +=  50;
             cooldownDash = 0;
         }
-        else if (cooldownDash >= 0.1)
+        else
         {
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
         }
@@ -159,11 +173,41 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    //Se encarga de comprobar el escalado de los datos al usar la inyeccion "F"
+    public void usarInyeccion(InputAction.CallbackContext context)
     {
-        Gizmos.color = Color.green;
-        Vector3 direccionGizmo = -transform.up * 1.1f;
-        Gizmos.DrawRay(transform.position, direccionGizmo);
+        if (context.performed && GameManager.Instance.inyeccionesRestantes > 0)
+        {
+            GameManager.Instance.inyeccionesRestantes--;
+            GameManager.Instance.cooldownRegeneracion = 5;
+            GameManager.Instance.velocidadActual += 10;
+            GameManager.Instance.regeneracionPerSegundoActual += 5;
+            GameManager.Instance.cooldownRegeneracion = 5;
+            efectoInyeccion = true;
+            cooldownEfectoVelocidad = 0;
+        }
+    }
+
+    //Se encarga de comprobar que el efecto de la inyeccion termine y todo vuelva a lo normal
+    public void efectoInyeccionTiempo()
+    {
+        if (efectoInyeccion == true && cooldownEfectoVelocidad > 3)
+        {
+            GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
+            GameManager.Instance.regeneracionPerSegundoActual = GameManager.Instance.regeneracionPerSegundoBase;
+            efectoInyeccion = false;
+        }
+    }
+
+    //Se encarga de instanciar y lanzar la granada en la direccion que estas mirando
+    public void lanzarGranada(InputAction.CallbackContext context)
+    {
+        if (context.performed && GameManager.Instance.consumiblesRestantes > 0)
+        {
+            GameManager.Instance.consumiblesRestantes--;
+            granada = Instantiate(granadaPrefab, salidaGranada.transform.position, Quaternion.identity);
+            granada.GetComponent<Rigidbody>().AddForce(salidaGranada.transform.forward * fuerzaLanzamiento, ForceMode.Impulse);
+        }
     }
 
     //Al colisionar con los objetos que representan las habilidades se activan y tambien las armas se equipan.
@@ -183,5 +227,11 @@ public class Movimiento : MonoBehaviour
         {
             other.GetComponent<IRecogerConsumible>().consumibleRecolectado();
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 direccionGizmo = -transform.up * 1.1f;
+        Gizmos.DrawRay(transform.position, direccionGizmo);
     }
 }

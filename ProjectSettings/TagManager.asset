@@ -8,6 +8,7 @@ TagManager:
   - Habilidad
   - Enemigo
   - Arma
+  - Consumible
   layers:
   - Default
   - TransparentFX

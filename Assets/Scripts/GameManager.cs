@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
             inyeccionesRestantes = inyeccionesBase;
             velocidadActual = velocidadBase;
             regeneracionPerSegundoActual = regeneracionPerSegundoBase;
+            consumiblesRestantes = consumiblesBase;
         }
     }
 
@@ -89,9 +90,16 @@ public class GameManager : MonoBehaviour
     }
     public void AumentarNumInyeccion()
     {
-        if (inyeccionesRestantes == 0)
+        if (inyeccionesRestantes < inyeccionesBase)
         {
-            inyeccionesRestantes = inyeccionesBase;
+            inyeccionesRestantes++;
+        }
+    }
+    public void AumentarNumConsumibles()
+    {
+        if (consumiblesRestantes < consumiblesBase)
+        {
+            consumiblesRestantes++;
         }
     }
 }
