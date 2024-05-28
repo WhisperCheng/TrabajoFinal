@@ -43,6 +43,12 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     //Se debe de asignar el flash del arma desde la interfaz ya que no se como hacerlo mediante codigo
     public ParticleSystem muzzleFlash;
 
+
+
+    //Hablar con el maestro cuando pueda para ver como hacer mediante codigo el retroceso del arma
+
+
+
     protected void Start()
     {
         fpsCamera = GameObject.Find("CamaraPrimeraPersona");

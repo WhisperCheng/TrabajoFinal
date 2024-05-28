@@ -179,10 +179,9 @@ public class Movimiento : MonoBehaviour
         if (context.performed && GameManager.Instance.inyeccionesRestantes > 0)
         {
             GameManager.Instance.inyeccionesRestantes--;
-            GameManager.Instance.cooldownRegeneracion = 5;
+            GameManager.Instance.inyeccionActivada = true;
             GameManager.Instance.velocidadActual += 10;
             GameManager.Instance.regeneracionPerSegundoActual += 5;
-            GameManager.Instance.cooldownRegeneracion = 5;
             efectoInyeccion = true;
             cooldownEfectoVelocidad = 0;
         }
@@ -195,6 +194,7 @@ public class Movimiento : MonoBehaviour
         {
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
             GameManager.Instance.regeneracionPerSegundoActual = GameManager.Instance.regeneracionPerSegundoBase;
+            GameManager.Instance.inyeccionActivada = false;
             efectoInyeccion = false;
         }
     }

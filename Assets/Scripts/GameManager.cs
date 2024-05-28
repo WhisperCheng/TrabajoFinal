@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public float puntosVidaActual;
     public float regeneracionPerSegundoBase;
     public float regeneracionPerSegundoActual;
-    public float cooldownRegeneracion;
     public float velocidadActual;
+    public bool inyeccionActivada;
     public int saltosExtrasBase;
     public int consumiblesBase;
     public int consumiblesRestantes;
@@ -51,20 +51,26 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cooldownRegeneracion += Time.deltaTime;
-
-        regeneracionVida();
+        regeneracionVidaTiempo();
+    }
+    public void regeneracionVidaTiempo()
+    {
+        if (puntosVidaActual < 100)
+        {
+            Invoke("regeneracionVida", 3);
+        }
+        if (inyeccionActivada == true)
+        {
+            regeneracionVida();
+        }
     }
     public void regeneracionVida()
-    {
-        if (cooldownRegeneracion >= 3)
-        {
-            puntosVidaActual += regeneracionPerSegundoActual * Time.deltaTime;
+    {   
+        puntosVidaActual += regeneracionPerSegundoActual * Time.deltaTime;
 
-            if (puntosVidaActual > puntosVidaMaxima)
-            {
-                puntosVidaActual = puntosVidaMaxima;
-            }
+        if (puntosVidaActual > puntosVidaMaxima)
+        {
+            puntosVidaActual = puntosVidaMaxima;
         }
     }
 
