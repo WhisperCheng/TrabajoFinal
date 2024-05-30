@@ -22,8 +22,9 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     public int cargador;
     public int balasRestantes;
 
-    //Booleano simple para saber si el arma es automatica o no
+    //Booleanos simples para saber si el arma es automatica o no y saber si el arma puede disparar o no
     public bool armaAutomatica;
+    public bool dispararPermitido;
 
     //Declaraciones para la posicion de las armas al ser recogidas y la posicion de la camara para el disparo
     public GameObject fpsCamera;
@@ -41,12 +42,11 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
 
     //Sistema de particulas para hacer el flash del cañon del arma, faltaria ponerle un particula buena
     //Se debe de asignar el flash del arma desde la interfaz ya que no se como hacerlo mediante codigo
-    public ParticleSystem muzzleFlash;
+    [SerializeField] public ParticleSystem muzzleFlash;
 
 
 
     //Hablar con el maestro cuando pueda para ver como hacer mediante codigo el retroceso del arma
-
 
 
     protected void Start()
@@ -54,6 +54,7 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
         fpsCamera = GameObject.Find("CamaraPrimeraPersona");
         armaHolster = GameObject.Find("Arma");
         Vector2moveCamera = GameObject.Find("CamaraPrimeraPersona").GetComponent<MovimientoCamara>();
+        dispararPermitido = true;
         intensidadRotacion = 5;
         smoothRotacion = 5;
         rango = Mathf.Infinity;

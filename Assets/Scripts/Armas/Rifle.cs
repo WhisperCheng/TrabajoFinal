@@ -11,7 +11,7 @@ public class Rifle : ArmasDatos
     {
         base.Start();
         daño = 10;
-        cadencia = 1200;
+        cadencia = 70;
         cargador = 71;
         balasRestantes = cargador;
         armaAutomatica = true;

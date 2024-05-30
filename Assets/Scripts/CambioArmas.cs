@@ -95,7 +95,7 @@ public class CambioArmas : MonoBehaviour
     public void disparoSemi(InputAction.CallbackContext context)
     {
         Debug.Log("Disparo Semiautomatico");
-        if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false)
+        if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false && armaActiva.GetComponent<ArmasDatos>().dispararPermitido == true)
         {
             if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
             {
@@ -111,7 +111,7 @@ public class CambioArmas : MonoBehaviour
     //Dependiendo del valor de la cadencia del arma tendra mayor velocidad de disparo o menor
     public void disparoAutomatico()
     {
-        if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true)
+        if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true && armaActiva.GetComponent<ArmasDatos>().dispararPermitido == true)
         {
             if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar && armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
             {
