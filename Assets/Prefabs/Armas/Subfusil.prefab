@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4104971566475282348}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Recamara_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1529899003156907493}
   - component: {fileID: 4538778390324380661}
   - component: {fileID: 5345037524951981186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Culata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 2521454253419380434}
   - component: {fileID: 7454783875875839078}
   - component: {fileID: 5495845869195333319}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cargador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2797280945365024856}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Recamara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 8928207621362769976}
   - component: {fileID: 1163554863063668810}
   - component: {fileID: 5849022872680415683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Subfusil
   m_TagString: Arma
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 7743076232356745913}
   - component: {fileID: 2277001636810200821}
   - component: {fileID: 9205521247928938646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Recamara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 1768348847140145803}
   - component: {fileID: 8288465843715863252}
   - component: {fileID: 43524613863437613}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Ca\xF1on"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 5854812378294371276}
   - component: {fileID: 3731943809267494421}
   - component: {fileID: 6791995861143579970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5322,7 +5322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5277402602120240771}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cargador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5355,7 +5355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 39600479180519327}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Culata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5389,7 +5389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62335436699011797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cargador_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5420,7 +5420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2725297699752021532}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Ca\xF1on"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
