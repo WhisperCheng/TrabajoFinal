@@ -30,6 +30,9 @@ public class Movimiento : MonoBehaviour
     //Variables bool
     bool colisionSuelo;
 
+    //Variable bool que se encarga de si estas agachado no poder hacer ni el slide ni el dash
+    public bool agachado;
+
     //Variable bool y float relacionado con la Inyeccion
     public bool efectoInyeccion;
     public float cooldownEfectoVelocidad;
@@ -114,7 +117,7 @@ public class Movimiento : MonoBehaviour
     //Arreglar el escalado del personaje con el arma IMPORTANTE
     public void slide(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f)
+        if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f && agachado == false)
         {
             GameManager.Instance.velocidadActual += 12;
             characterController.height = 1;
@@ -122,6 +125,22 @@ public class Movimiento : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
+            characterController.height = 2;
+        }
+    }
+    //Se encarga del agachado y la reduccion de velocidad correspondiente del personaje
+    public void agachar(InputAction.CallbackContext context)
+    {
+        if (playerInput.actions["Agacharse"].IsPressed() && context.performed)
+        {   
+            GameManager.Instance.velocidadActual /= 2;
+            agachado = true;
+            characterController.height = 1;
+        }
+        else if (context.canceled)
+        {
+            agachado = false;
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
             characterController.height = 2;
         }
@@ -151,7 +170,7 @@ public class Movimiento : MonoBehaviour
     //Se encarga de hacer el dash pero solo de forma lateral y hacia atras NO se puede hacerlo de frente
     public void dash(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
+        if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && agachado == false && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
             GameManager.Instance.velocidadActual +=  50;
             cooldownDash = 0;

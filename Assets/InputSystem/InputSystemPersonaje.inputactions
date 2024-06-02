@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Agacharse",
+                    "type": "Button",
+                    "id": "6824bebb-206b-449e-9d7e-310ff2d0fbd7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -204,19 +213,19 @@
                 },
                 {
                     "name": "",
-                    "id": "9e8b9b27-e097-452a-a1ca-1c9cd19219c8",
-                    "path": "<Keyboard>/ctrl",
+                    "id": "629995ef-9e1f-4212-bf32-a0482dee0456",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "",
                     "action": "Slide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "629995ef-9e1f-4212-bf32-a0482dee0456",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "b837e500-733a-4e47-a77f-a51caa0e6c29",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -287,6 +296,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LanzarGranada",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55680fd8-1f20-415d-8d65-4d4dd2594811",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Agacharse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
