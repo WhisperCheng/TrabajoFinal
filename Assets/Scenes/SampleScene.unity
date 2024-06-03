@@ -674,6 +674,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 314164029442382917, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: granadaPrefab
+      value: 
+      objectReference: {fileID: 687621309750598085, guid: 7114c2753b3173d4089d94285d66ae1f, type: 3}
     - target: {fileID: 4043539681705961618, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 18
