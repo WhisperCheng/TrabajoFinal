@@ -18,14 +18,15 @@ public class Pistola : ArmasDatos
         armaPorRecolectar = true;
     }
     void Update()
-    {
+    {  
         balanceoArma();
+        Sinbalas();
     }
     public override void Disparar()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango)) 
+        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango) && dispararPermitido == true) 
         {
             if (hit.collider.tag == "Enemigo")
             {

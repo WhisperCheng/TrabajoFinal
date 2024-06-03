@@ -72,7 +72,6 @@ public class Movimiento : MonoBehaviour
         cooldownDash += Time.deltaTime;
         cooldownSlide += Time.deltaTime;
         cooldownSalto += Time.deltaTime;
-        cooldownEfectoVelocidad += Time.deltaTime;
     }
     private void FixedUpdate()
     {
@@ -92,7 +91,6 @@ public class Movimiento : MonoBehaviour
 
         //Se encarga de mirar si el personaje esta colisionandio con "algo" para poder saltar
         rayoSalto();
-        efectoInyeccionTiempo();
     }
 
     //Se encarga de el salto del personaje
@@ -181,14 +179,13 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    //Se encarga de la recarga de las armas
+    //Se encarga de empezar la recarga de las armas
     //Esta en este script ya que el InputSystem de Unity da bastantes fallos y se tuvo que mover a este script para el correcto funcionamiento
     public void Recarga(InputAction.CallbackContext context)
     {
         if (context.started && cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes < cambioArmas.armaActiva.GetComponent<ArmasDatos>().cargador)
         {
-            Debug.Log("Recargando");
-            cambioArmas.armaActiva.GetComponent<ArmasDatos>().balasRestantes = cambioArmas.armaActiva.GetComponent<ArmasDatos>().cargador;
+            cambioArmas.armaActiva.GetComponent<ArmasDatos>().recargando();
         }
     }
 
@@ -197,11 +194,11 @@ public class Movimiento : MonoBehaviour
     {
         if (context.performed && GameManager.Instance.inyeccionesRestantes > 0)
         {
+            Invoke("efectoInyeccionTiempo", 3);
             GameManager.Instance.inyeccionesRestantes--;
             GameManager.Instance.inyeccionActivada = true;
             GameManager.Instance.velocidadActual += 10;
             GameManager.Instance.regeneracionPerSegundoActual += 5;
-            efectoInyeccion = true;
             cooldownEfectoVelocidad = 0;
         }
     }
@@ -209,13 +206,10 @@ public class Movimiento : MonoBehaviour
     //Se encarga de comprobar que el efecto de la inyeccion termine y todo vuelva a lo normal
     public void efectoInyeccionTiempo()
     {
-        if (efectoInyeccion == true && cooldownEfectoVelocidad > 3)
-        {
-            GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
-            GameManager.Instance.regeneracionPerSegundoActual = GameManager.Instance.regeneracionPerSegundoBase;
-            GameManager.Instance.inyeccionActivada = false;
-            efectoInyeccion = false;
-        }
+        GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
+        GameManager.Instance.regeneracionPerSegundoActual = GameManager.Instance.regeneracionPerSegundoBase;
+        GameManager.Instance.inyeccionActivada = false;
+        efectoInyeccion = false;
     }
 
     //Se encarga de instanciar y lanzar la granada en la direccion que estas mirando
@@ -237,7 +231,6 @@ public class Movimiento : MonoBehaviour
             other.GetComponent<IHabilidadesManager>().ActivarHabilidad();
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
         }
-
         if (other.gameObject.tag == "Arma")
         {
             other.GetComponent<IRecogerArmas>().armaRecolectada();

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3426322377586562140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pie.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8853096308895134591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IKPierna.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 3007602497663459421}
   - component: {fileID: 4223690109389389047}
   - component: {fileID: 231305906492278604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cuello
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 5351428917268345318}
   - component: {fileID: 8552942901818373096}
   - component: {fileID: 2160119053509205453}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tobillo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 3183322424620051688}
   - component: {fileID: 3262515977403707951}
   - component: {fileID: 3797115909468348063}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rodilla.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771088197865896059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brazo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 1880221049922906256}
   - component: {fileID: 464852895440069661}
   - component: {fileID: 8948154878230512910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tobillo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8986880005786274821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPelvisMuslo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 1986340205918565235}
   - component: {fileID: 3814668134917590016}
   - component: {fileID: 3594069975722643325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "UnionHombro-Ca\xF1on.R"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301239219434408278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 78098907481388844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolePierna.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 3020563032890418433}
   - component: {fileID: 2163402544249266722}
   - component: {fileID: 3219132688658904230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cintura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1097364993539617902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canilla.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8936117874224733295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IKPierna.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 63588861517278359}
   - component: {fileID: 2760576071840452733}
   - component: {fileID: 2800632967349326976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rodilla.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3111666155807214128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IKPierna.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4109758072373816206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "IKCa\xF1on.R"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,7 +915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7025142452644311860}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muslo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7574759330850583054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPelvisMuslo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 1029762611374040990}
   - component: {fileID: 8950046914761741689}
   - component: {fileID: 4106989424923862217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Codo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5783644964987311451}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pie.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 1109795999841403457}
   - component: {fileID: 4990813870616078938}
   - component: {fileID: 7150224044401312910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionCintura-Muslo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7827942798706275514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "IKCa\xF1on.L_end"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 3796564990960977785}
   - component: {fileID: 2100797704042446660}
   - component: {fileID: 3043987897182495468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on.L"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1301,7 +1301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475482581815830781}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,7 +1336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4329897758411650861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cuello
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6204885188856626092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoleBrazo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5222352977866718260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoleBrazo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3763566155320648070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SoportePelvis.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1465,7 +1465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4781261654278818069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on.R_end"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390668002903188126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPechoBrazo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1532,7 +1532,7 @@ GameObject:
   - component: {fileID: 4398323350784033407}
   - component: {fileID: 4509343616521433740}
   - component: {fileID: 4812668922020815102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "UnionHombro-Ca\xF1on.L"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4795165995919243089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "IKCa\xF1on.L"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,9 +1650,9 @@ GameObject:
   - component: {fileID: -3072153119314145859}
   - component: {fileID: -19805151714684732}
   - component: {fileID: 4603091376623462722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemigo
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1753,7 +1753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1543143039908152750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoleBrazo.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1784,7 +1784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7078295844265326999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pie.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1819,7 @@ GameObject:
   - component: {fileID: 2607690751499640382}
   - component: {fileID: 72745340547336574}
   - component: {fileID: 5869228661026099360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionCintura-Muslo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   - component: {fileID: 7005183165624366060}
   - component: {fileID: 9161886916406949940}
   - component: {fileID: 1015265925381990791}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Codo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1986,7 +1986,7 @@ GameObject:
   - component: {fileID: 5210743328279288275}
   - component: {fileID: 2500990246278383691}
   - component: {fileID: 1874173520175507505}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canilla.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2069,7 @@ GameObject:
   - component: {fileID: 902961581109212288}
   - component: {fileID: 4807550794673040887}
   - component: {fileID: 6854697931605957347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pie.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2150,7 +2150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6141284388977917685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolePierna.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2183,7 +2183,7 @@ GameObject:
   - component: {fileID: 5720512196434460495}
   - component: {fileID: 3737820042359421859}
   - component: {fileID: 441908399655769941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2266,7 +2266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174545391322792697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on.L_end"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2299,7 +2299,7 @@ GameObject:
   - component: {fileID: 7976676504696863898}
   - component: {fileID: 8115010346904444241}
   - component: {fileID: 3123621099700740298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on.R"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2385,7 +2385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2642833539334885119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pie.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 284292985575463105}
   - component: {fileID: 4374958528507969447}
   - component: {fileID: 3836552560296583180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muslo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2499,7 +2499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770553237653699352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabeza_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9144499996744688359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PoleBrazo.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2561,7 +2561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4195852594281130056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tobillo.L 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2593,7 +2593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5823993780318385138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on.L"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,7 +2628,7 @@ GameObject:
   - component: {fileID: 791403694746319814}
   - component: {fileID: 5931157863281903937}
   - component: {fileID: 4326056375272912406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hombro.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2709,7 +2709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7380859736646040907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "IKCa\xF1on.R_end"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2740,7 +2740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8605528757308689304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SoportePelvis.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2772,7 +2772,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634837649153930527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canilla.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2808,7 +2808,7 @@ GameObject:
   - component: {fileID: 3523315679370681762}
   - component: {fileID: 6207229384843906587}
   - component: {fileID: 6963778236965832658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionTorso-Cintura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2890,7 +2890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8576281603845747055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pelvis_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2923,7 +2923,7 @@ GameObject:
   - component: {fileID: 7760682387562582567}
   - component: {fileID: 2518731494211772130}
   - component: {fileID: 976099831641111388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canilla.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3004,7 +3004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407104553036405030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolePierna.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3038,7 +3038,7 @@ GameObject:
   - component: {fileID: 5070912097685604624}
   - component: {fileID: 1553077048392349295}
   - component: {fileID: 8008325379494137341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3120,7 +3120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7713515130748477423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPechoBrazo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,7 +3156,7 @@ GameObject:
   - component: {fileID: 2947047573329444004}
   - component: {fileID: 8963589284932665637}
   - component: {fileID: 3510326264136985293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPecho-Hombro.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3240,7 +3240,7 @@ GameObject:
   - component: {fileID: 4633000295095033127}
   - component: {fileID: 31356865737931963}
   - component: {fileID: 2741496491705246475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pie.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,7 +3321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527258340273916699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Ca\xF1on.R"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3354,7 +3354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3970415752248164934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3387,7 +3387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1659923772045850210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PolePierna.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,7 +3421,7 @@ GameObject:
   - component: {fileID: 4265259449984990161}
   - component: {fileID: 2131887774839473111}
   - component: {fileID: 7114307280020230770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muslo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3502,7 +3502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5936763282080960956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPelvisPecho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3535,7 +3535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3758731298396013335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muslo.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 1287724253909166665}
   - component: {fileID: 1528992881376854687}
   - component: {fileID: 5835226775405867233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UnionPecho-Hombro.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3653,7 +3653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8217472850143936619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IKPierna.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3685,7 +3685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7061493050862485299}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Brazo.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3719,7 +3719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7946734371707684543}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tobillo.R 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3753,7 +3753,7 @@ GameObject:
   - component: {fileID: 8693195827584005189}
   - component: {fileID: 7881336088158801507}
   - component: {fileID: 1814926022489475494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hombro.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}

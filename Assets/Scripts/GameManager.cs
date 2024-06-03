@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public float velocidadBase;
     public float fuerzaSalto;
     public float sensibilidad;
-    public float reduccionDaño;
     public float puntosVidaMaxima;
     public float puntosVidaActual;
     public float regeneracionPerSegundoBase;
@@ -19,6 +18,8 @@ public class GameManager : MonoBehaviour
     public int consumiblesRestantes;
     public int inyeccionesBase;
     public int inyeccionesRestantes;
+
+    public int reduccionDaño;
 
     public static GameManager Instance { get; private set; }
 

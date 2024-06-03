@@ -97,13 +97,7 @@ public class CambioArmas : MonoBehaviour
         Debug.Log("Disparo Semiautomatico");
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false && armaActiva.GetComponent<ArmasDatos>().dispararPermitido == true)
         {
-            if (armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0) 
-            {
-                armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
-
-                armaActiva.GetComponent<ArmasDatos>().Disparar();
-                armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
-            }
+            armaActiva.GetComponent<ArmasDatos>().datosDisparoSemi();
         }
     }
 
