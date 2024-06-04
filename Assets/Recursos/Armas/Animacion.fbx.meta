@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2d29222a8ace08c4c8786af23e190b1b
+guid: 7bbccd810daba584ca90d4142f5e0e18
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,32 +8,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BlancoSCP
-    second: {fileID: 2100000, guid: 89050c561b239fd40b34356b310efe6e, type: 2}
+    second: {fileID: 2100000, guid: 92492d175edc344418d0f5c60f5cdf62, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Laton
-    second: {fileID: 2100000, guid: a13cdf452eb8f924fad4858255b0c6ed, type: 2}
+    second: {fileID: 2100000, guid: 498e07d7e0c5434458e12558ed934e1f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Marron
-    second: {fileID: 2100000, guid: 1dedb907fdd36e64bba0c0b5d877eca5, type: 2}
+    second: {fileID: 2100000, guid: 3f96d97625d5bb14cbb60115d13f668e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MetalOscuro
-    second: {fileID: 2100000, guid: 88159bc6ce4a9ef42a1efda4df5a3033, type: 2}
+    second: {fileID: 2100000, guid: 5bed4d3e33e6cf044b04473cdbf518a0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: NegroSCP
-    second: {fileID: 2100000, guid: ff64eeb0dc7ddd24c8c3dea4b0130ec8, type: 2}
+    second: {fileID: 2100000, guid: 6cf27237c551ddd4a8ce8a74d36214c1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PuntaBala
-    second: {fileID: 2100000, guid: a615b2bcd4f9ebd42896f2efa73fe4bb, type: 2}
+    second: {fileID: 2100000, guid: e988d996dc4979a4aac782582482223b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -10,16 +10,16 @@ public class Movimiento : MonoBehaviour
 {
     //Declaracion del Script de las armas para la recarga
     public CambioArmas cambioArmas;
+    public Inyeccion scriptInyeccion;
 
     //Declaraciones
     PlayerInput playerInput;
     CharacterController characterController;
-    Animator animator;
 
     //Variables float "Cooldowns"
-    public float cooldownSalto;
-    public float cooldownSlide;
-    public float cooldownDash;
+    public bool cooldownSalto;
+    public bool cooldownSlide;
+    public bool cooldownDash;
 
     //Variables float "Velocidad"
     public float inercia;
@@ -34,15 +34,16 @@ public class Movimiento : MonoBehaviour
     //Variable bool que se encarga de si estas agachado no poder hacer ni el slide ni el dash
     public bool agachado;
 
-    //Variable bool y float relacionado con la Inyeccion
-    public bool efectoInyeccion;
-    public GameObject inyeccionPrefab;
-    public GameObject inyeccion;
-
     //Variable relacionada con los consumibles y las granadas
+    public GameObject salidaConsumibles;
     public GameObject granadaPrefab;
     public GameObject granada;
     public float fuerzaLanzamiento;
+
+
+    //Tengo que crear la tienda para poder seguir con esto y crear el cambio de granadas
+    public bool granadaPilladaPEM;
+
 
     //Variables int
     public int saltosExtrasRestantes;
@@ -54,9 +55,6 @@ public class Movimiento : MonoBehaviour
     Vector3 move;
     Vector2 inputMovimientoWASD;
 
-    public GameObject salidaConsumibles;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +62,9 @@ public class Movimiento : MonoBehaviour
         fuerzaGravedad = -9.81f;
         longitudRayo = 1.1f;
         fuerzaLanzamiento = 25;
+        cooldownDash = true;
+        cooldownSalto = true;
+        cooldownSlide = true;
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
         salidaConsumibles = GameObject.Find("SalidaConsumibles");
@@ -72,10 +73,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Distintos cooldown del movimiento
-        cooldownDash += Time.deltaTime;
-        cooldownSlide += Time.deltaTime;
-        cooldownSalto += Time.deltaTime;
+
     }
     private void FixedUpdate()
     {
@@ -102,28 +100,35 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed && colisionSuelo == true)
         {
+            Invoke("coolDownSaltar", 0.1f);
             vectorSalto.y = GameManager.Instance.fuerzaSalto;
-            cooldownSalto = 0;
+            cooldownSalto = false;
             colisionSuelo = false;
         }
-        if (context.phase == InputActionPhase.Performed && cooldownSalto >= 0.1f && saltosExtrasRestantes > 0)
+        if (context.phase == InputActionPhase.Performed && cooldownSalto == true && saltosExtrasRestantes > 0)
         {
+            Invoke("coolDownSaltar", 0.1f);
             vectorSalto.y = GameManager.Instance.fuerzaSalto;
-            cooldownSalto = 0;
+            cooldownSalto = false;
             saltosExtrasRestantes -= 1;
         }
     }
 
-    //Se encarga de hacer el slide durante X segundos
+    //Se encarga del cooldown del salto
+    public void coolDownSaltar()
+    {
+        cooldownSalto = true;
+    }
 
-    //Arreglar el escalado del personaje con el arma IMPORTANTE
+    //Se encarga de hacer el slide durante X segundos
     public void slide(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide >= 2f && agachado == false)
+        if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide == true && agachado == false)
         {
+            Invoke("coolDownSlide", 2);
             GameManager.Instance.velocidadActual += 12;
             characterController.height = 1;
-            cooldownSlide = 0;
+            cooldownSlide = false;
         }
         else
         {
@@ -131,6 +136,13 @@ public class Movimiento : MonoBehaviour
             characterController.height = 2;
         }
     }
+
+    //Se encarga del cooldown del slide
+    public void coolDownSlide()
+    {
+        cooldownSlide = true;
+    }
+
     //Se encarga del agachado y la reduccion de velocidad correspondiente del personaje
     public void agachar(InputAction.CallbackContext context)
     {
@@ -172,15 +184,22 @@ public class Movimiento : MonoBehaviour
     //Se encarga de hacer el dash pero solo de forma lateral y hacia atras NO se puede hacerlo de frente
     public void dash(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && cooldownDash >= 2 && agachado == false && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
+        if (context.phase == InputActionPhase.Started && cooldownDash == true && agachado == false && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
+            Invoke("coolDownDash", 2);
             GameManager.Instance.velocidadActual +=  50;
-            cooldownDash = 0;
+            cooldownDash = false;
         }
         else
         {
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
         }
+    }
+
+    //Se encarga del cooldown del dash
+    public void coolDownDash()
+    {
+        cooldownDash = true;
     }
 
     //Se encarga de empezar la recarga de las armas
@@ -193,28 +212,13 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    //Se encarga de comprobar el escalado de los datos al usar la inyeccion "F"
+    //Se encarga que al pulsar la tecla asignada se ejecute el script de la inyeccion
     public void usarInyeccion(InputAction.CallbackContext context)
     {
         if (context.performed && GameManager.Instance.inyeccionesRestantes > 0)
         {
-            Invoke("efectoInyeccionTiempo", 3);
-            inyeccion = Instantiate(inyeccionPrefab, salidaConsumibles.transform.position, Quaternion.identity);
-            GameManager.Instance.inyeccionesRestantes--;
-            GameManager.Instance.inyeccionActivada = true;
-            GameManager.Instance.velocidadActual += 10;
-            GameManager.Instance.regeneracionPerSegundoActual += 5;
-            animator.SetTrigger("AplicacionInyeccion");
+            scriptInyeccion.EfectoInyeccion();
         }
-    }
-
-    //Se encarga de comprobar que el efecto de la inyeccion termine y todo vuelva a lo normal
-    public void efectoInyeccionTiempo()
-    {
-        GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
-        GameManager.Instance.regeneracionPerSegundoActual = GameManager.Instance.regeneracionPerSegundoBase;
-        GameManager.Instance.inyeccionActivada = false;
-        efectoInyeccion = false;
     }
 
     //Se encarga de instanciar y lanzar la granada en la direccion que estas mirando
@@ -235,10 +239,6 @@ public class Movimiento : MonoBehaviour
         {
             other.GetComponent<IHabilidadesManager>().ActivarHabilidad();
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
-        }
-        if (other.gameObject.tag == "Arma")
-        {
-            other.GetComponent<IRecogerArmas>().armaRecolectada();
         }
         if (other.gameObject.tag == "Consumible")
         {

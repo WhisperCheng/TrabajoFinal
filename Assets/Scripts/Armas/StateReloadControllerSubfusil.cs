@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class InyeccionStateController : StateMachineBehaviour
+public class StateReloadControllerSubfusil : StateMachineBehaviour
 {
-    public Inyeccion inyeccion;
+    //Declaracion
+    public ArmasDatos armasDatos;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        inyeccion = GameObject.Find("Inyeccion").GetComponent<Inyeccion>();
+        armasDatos = GameObject.Find("SubFusil").GetComponent<ArmasDatos>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,6 +22,7 @@ public class InyeccionStateController : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        inyeccion.gameObject.SetActive(false);
+        animator.enabled = false;
+        armasDatos.dispararPermitido = true;
     }
 }

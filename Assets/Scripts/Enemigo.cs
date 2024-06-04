@@ -8,7 +8,8 @@ public class Enemigo : MonoBehaviour
     public int vidaEnemigo;
     public float distanciaEnemigoPersonaje;
     public GameObject personajeObjetivo;
-    bool limiteDistancia;
+    public bool limiteDistancia;
+    public bool desactivado;
     NavMeshAgent agent;
     
 
@@ -19,20 +20,33 @@ public class Enemigo : MonoBehaviour
         personajeObjetivo = GameObject.Find("Personaje");
         agent = GetComponent<NavMeshAgent>();
     }
+    void Update()
+    {
+        Debug.Log(desactivado);
+
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        distanciaEnemigoPersonaje = Vector3.Distance(agent.transform.position, personajeObjetivo.transform.position);
-
-        if (distanciaEnemigoPersonaje >= 15 && limiteDistancia == false) 
+        if (desactivado == false)
         {
-            agent.destination = personajeObjetivo.transform.position;
+            distanciaEnemigoPersonaje = Vector3.Distance(agent.transform.position, personajeObjetivo.transform.position);
+
+            if (distanciaEnemigoPersonaje >= 15 && limiteDistancia == false) 
+            {
+                agent.destination = personajeObjetivo.transform.position;
+            }
+            else if (distanciaEnemigoPersonaje < 15) 
+            {
+                agent.destination = agent.transform.position;
+                limiteDistancia = true;
+            }
         }
-        else if (distanciaEnemigoPersonaje < 15) 
+        else if (distanciaEnemigoPersonaje < 15 || desactivado == true)
         {
             agent.destination = agent.transform.position;
-            limiteDistancia = true;
+            Invoke("cooldownDesactivado", 3);
         }
     }
     public void hitDaño(int dañoArma)
@@ -42,6 +56,13 @@ public class Enemigo : MonoBehaviour
         if (vidaEnemigo <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+    public void cooldownDesactivado()
+    {
+        if (desactivado == true)
+        {
+            desactivado = false;
         }
     }
 }

@@ -6,18 +6,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
-public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
+public abstract class ArmasDatos : MonoBehaviour
 {
-    //Declaracion necesaria para las aniamcion de las armas
-    Animator animator;
+    //Declaracion necesaria para las animacion de las armas
+    public Animator animator;
 
     //Variables de datos generales que tendran las armas
     public int daño;
-    public float cadencia;
-    public float tiempoParaDisparar;
-
-    //Bool utilizado para arreglar un pequeño bug que habia con el swing de las armas NO recolectadas
-    public bool armaPorRecolectar;
 
     //Variable necesaria que tendran todas las armas siempre con el mismo valor
     public float rango;
@@ -58,7 +53,6 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
         smoothRotacion = 5;
         rango = Mathf.Infinity;
         rotacionOrigen = transform.localRotation;
-        tiempoParaDisparar = 0;
         animator = GetComponent<Animator>();
         animator.enabled = false;
     }
@@ -69,7 +63,7 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     //Se encarga del balanceo del arma cuando no se esta ejecutando ninguna animacion
     public void balanceoArma()
     {
-        if (armaPorRecolectar == true && dispararPermitido == true)
+        if (dispararPermitido == true)
         {
             Quaternion t_adj_x = Quaternion.AngleAxis(intensidadRotacion * Vector2moveCamera.inputMovimientoCamara.x, Vector3.up);
             Quaternion t_adj_y = Quaternion.AngleAxis(intensidadRotacion * Vector2moveCamera.inputMovimientoCamara.y, Vector3.right);
@@ -78,17 +72,7 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
             transform.localRotation = Quaternion.Lerp(transform.localRotation, target_rotation, Time.deltaTime * smoothRotacion);
         }
     }
-    //Se encarga del recoger del arma y ponerlo en el ArmaHolster
-    public void armaRecolectada()
-    {
-        if (armaPorRecolectar == false)
-        {
-            armaPorRecolectar = true;
-            gameObject.SetActive(false);
-            Instantiate(transform, armaHolster.transform.position, armaHolster.transform.rotation, armaHolster.transform);
-            Destroy(gameObject);
-        }
-    }
+
     //Se encarga de la animacion de la recarga y el escalado de balas correspondiente
     public void recargando()
     {
@@ -96,15 +80,15 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
         //PERO SIN LA ANIMACION DE RECARGA
         if (animator.enabled == false || balasRestantes == 0)
         {
-            dispararPermitido = false;
             animator.enabled = true;
-            balasRestantes = cargador;
             animator.SetTrigger("Recargando");
+            dispararPermitido = false;
+            balasRestantes = cargador;
         }
     }
 
-    //Se encarga de los datos relacionados con las armas semiAutomaticas
-    public void datosDisparoSemi()
+    //Se encarga de los datos relacionados con el disparo
+    public void datosDisparo()
     {
         if (balasRestantes > 0)
         {
@@ -118,9 +102,10 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     }
 
     //Sirve para cambiar el estado de las armas cuando se quedan sin balas
+    //Se tuvo que añadir el "animator.enabled == false" por un bug del subfusil por ser automatica
     public void Sinbalas()
     {
-        if (balasRestantes == 0)
+        if (balasRestantes == 0 && animator.enabled == false)
         {
             animator.enabled = true;
             animator.SetTrigger("SinBalas");

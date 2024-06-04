@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5255108278435512387}
   - component: {fileID: 4117796702055746176}
   - component: {fileID: 7560614857876819295}
+  - component: {fileID: -2078180304048414780}
   m_Layer: 0
   m_Name: GranadaPEM
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 128.97128}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 20, y: 20, z: 25.794256}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -140,3 +141,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2078180304048414780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5993266056245696283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f97715c010b7b489a3f320cbf6f837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temporizadorGranada: 0
+  radioExplosion: 0
+  "da\xF1o": 0
+  mascaraEnemigo: 0

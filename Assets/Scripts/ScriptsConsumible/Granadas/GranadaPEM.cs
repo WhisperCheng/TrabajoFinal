@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Granada : MonoBehaviour
+public class GranadaPEM : MonoBehaviour
 {
-    //Declaraciones
+    //Declaracion
     Rigidbody rb;
 
     //Variable float que se encarga del tiempo de la granada para explotar
@@ -19,11 +19,10 @@ public class Granada : MonoBehaviour
     //Variable int para la mascara del enemigo
     public int mascaraEnemigo;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        daño = 80;
+        daño = 10;
         radioExplosion = 10;
         mascaraEnemigo = 1 << 8;
         temporizadorGranada = 3;
@@ -40,7 +39,7 @@ public class Granada : MonoBehaviour
         explosion();
     }
 
-   //Se encarga de la explosion y de hacer daño
+    //Se encarga de la explosion, de hacer daño y desactivar al enemigo;
     public void explosion()
     {
         if (temporizadorGranada <= 0)
@@ -50,6 +49,7 @@ public class Granada : MonoBehaviour
             foreach (var hitcollider in hitColliders)
             {
                 hitcollider.GetComponent<Enemigo>().hitDaño(daño);
+                hitcollider.GetComponent<Enemigo>().desactivado = true;
                 Debug.Log(hitcollider);
             }
             //Desactivar este destroy para poder probar el radio de las explosiones

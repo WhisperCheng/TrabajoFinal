@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 
 public class CambioArmas : MonoBehaviour
 {
-
     //Variables necesarias para saber que arma esta seleccionada y el poder hacer el cambio de arma
     public int armaSeleccionada;
     public float cambioArmaRueda;
@@ -34,6 +33,7 @@ public class CambioArmas : MonoBehaviour
     void Update()
     {
         cooldownCambioArmas += Time.deltaTime;
+
         //Se encarga de recibir el input de la rueda del raton en positivo o negativo
         cambioArmaRueda = playerInput.actions["CambiarArma"].ReadValue<float>();
 
@@ -91,30 +91,24 @@ public class CambioArmas : MonoBehaviour
             numArma++;
         }
     }
+
     //En el caso de que el booleano del arma automatica esta en falso se ejecuta este apartado para el disparo semiautomatico
     public void disparoSemi(InputAction.CallbackContext context)
     {
         Debug.Log("Disparo Semiautomatico");
         if (context.started && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == false && armaActiva.GetComponent<ArmasDatos>().dispararPermitido == true)
         {
-            armaActiva.GetComponent<ArmasDatos>().datosDisparoSemi();
+            armaActiva.GetComponent<ArmasDatos>().datosDisparo();
         }
     }
 
     //Se encarga de que si el arma es automatica se mantenga el fuego constante
-    //Dependiendo del valor de la cadencia del arma tendra mayor velocidad de disparo o menor
+    //Dependiendo del valor de velocidad de la animacion "Disparo" del arma tiene mas candencia o menos
     public void disparoAutomatico()
     {
         if (playerInput.actions["Disparando"].IsPressed() && armaActiva.GetComponent<ArmasDatos>().armaAutomatica == true && armaActiva.GetComponent<ArmasDatos>().dispararPermitido == true)
         {
-            if (Time.time >= armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar && armaActiva.GetComponent<ArmasDatos>().balasRestantes > 0)
-            {
-                armaActiva.GetComponent<ArmasDatos>().tiempoParaDisparar = Time.time + 1 / armaActiva.GetComponent<ArmasDatos>().cadencia;
-                Debug.Log("Se a mantenido automatico");
-                armaActiva.GetComponent<ArmasDatos>().muzzleFlash.Play();
-                armaActiva.GetComponent<ArmasDatos>().Disparar();
-                armaActiva.GetComponent<ArmasDatos>().balasRestantes--;
-            }
+            armaActiva.GetComponent<ArmasDatos>().datosDisparo();
         }
     }
 }

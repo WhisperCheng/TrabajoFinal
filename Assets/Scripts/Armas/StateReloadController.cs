@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class StateReloadController : StateMachineBehaviour
 {
-    public ArmasDatos armasDatosPistola;
+    //Declaracion
+    public ArmasDatos armasDatos;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        armasDatosPistola = GameObject.Find("Pistola").GetComponent<ArmasDatos>();
+        armasDatos = GameObject.Find("Pistola").GetComponent<ArmasDatos>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,8 +23,6 @@ public class StateReloadController : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.enabled = false;
-        armasDatosPistola.dispararPermitido = true;
+        armasDatos.dispararPermitido = true;
     }
-
-
 }

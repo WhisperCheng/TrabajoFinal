@@ -11,17 +11,20 @@ public class Pistola : ArmasDatos
         // Llamo a la clase start del padre
         base.Start();
         daño = 10;
-        cadencia = 1f;
         cargador = 30;
         balasRestantes = cargador;
         armaAutomatica = false;
-        armaPorRecolectar = true;
     }
     void Update()
     {  
+        //Se encarga del balanceo del arma
         balanceoArma();
+
+        //Se encarga de comprobar las balas del arma y cambiar el estado en dicho caso
         Sinbalas();
     }
+
+    //Se encarga de lanzar el rayo para dañar al enemigo
     public override void Disparar()
     {
         RaycastHit hit;

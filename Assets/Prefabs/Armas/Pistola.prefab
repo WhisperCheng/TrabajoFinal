@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457204955706626936}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -165,7 +165,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997047912066187592}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -277,10 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137092a776d86074abdd0653860d4b1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   "da\xF1o": 0
-  cadencia: 0
-  tiempoParaDisparar: 0
-  armaPorRecolectar: 0
   rango: 0
   cargador: 0
   balasRestantes: 0
@@ -293,7 +291,6 @@ MonoBehaviour:
   rotacionOrigen: {x: 0, y: 0, z: 0, w: 0}
   Vector2moveCamera: {fileID: 0}
   muzzleFlash: {fileID: 7139902585089159938}
-  movimientoPersonaje: {fileID: 0}
 --- !u!95 &-4649817392319781281
 Animator:
   serializedVersion: 5
@@ -397,7 +394,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4009154874364769036}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5341,7 +5338,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6595370133472392930}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
