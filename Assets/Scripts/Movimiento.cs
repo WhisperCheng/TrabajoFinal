@@ -14,6 +14,7 @@ public class Movimiento : MonoBehaviour
     //Declaraciones
     PlayerInput playerInput;
     CharacterController characterController;
+    Animator animator;
 
     //Variables float "Cooldowns"
     public float cooldownSalto;
@@ -35,12 +36,12 @@ public class Movimiento : MonoBehaviour
 
     //Variable bool y float relacionado con la Inyeccion
     public bool efectoInyeccion;
-    public float cooldownEfectoVelocidad;
+    public GameObject inyeccionPrefab;
+    public GameObject inyeccion;
 
     //Variable relacionada con los consumibles y las granadas
     public GameObject granadaPrefab;
     public GameObject granada;
-    public GameObject salidaGranada;
     public float fuerzaLanzamiento;
 
     //Variables int
@@ -53,6 +54,9 @@ public class Movimiento : MonoBehaviour
     Vector3 move;
     Vector2 inputMovimientoWASD;
 
+    public GameObject salidaConsumibles;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +66,7 @@ public class Movimiento : MonoBehaviour
         fuerzaLanzamiento = 25;
         playerInput = GetComponent<PlayerInput>();
         characterController = GetComponent<CharacterController>();
-        salidaGranada = GameObject.Find("SalidaConsumibles");
+        salidaConsumibles = GameObject.Find("SalidaConsumibles");
     }
 
     // Update is called once per frame
@@ -195,11 +199,12 @@ public class Movimiento : MonoBehaviour
         if (context.performed && GameManager.Instance.inyeccionesRestantes > 0)
         {
             Invoke("efectoInyeccionTiempo", 3);
+            inyeccion = Instantiate(inyeccionPrefab, salidaConsumibles.transform.position, Quaternion.identity);
             GameManager.Instance.inyeccionesRestantes--;
             GameManager.Instance.inyeccionActivada = true;
             GameManager.Instance.velocidadActual += 10;
             GameManager.Instance.regeneracionPerSegundoActual += 5;
-            cooldownEfectoVelocidad = 0;
+            animator.SetTrigger("AplicacionInyeccion");
         }
     }
 
@@ -218,8 +223,8 @@ public class Movimiento : MonoBehaviour
         if (context.performed && GameManager.Instance.consumiblesRestantes > 0)
         {
             GameManager.Instance.consumiblesRestantes--;
-            granada = Instantiate(granadaPrefab, salidaGranada.transform.position, Quaternion.identity);
-            granada.GetComponent<Rigidbody>().AddForce(salidaGranada.transform.forward * fuerzaLanzamiento, ForceMode.Impulse);
+            granada = Instantiate(granadaPrefab, salidaConsumibles.transform.position, Quaternion.identity);
+            granada.GetComponent<Rigidbody>().AddForce(salidaConsumibles.transform.forward * fuerzaLanzamiento, ForceMode.Impulse);
         }
     }
 

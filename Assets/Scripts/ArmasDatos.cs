@@ -94,12 +94,12 @@ public abstract class ArmasDatos : MonoBehaviour, IRecogerArmas
     {
         //Se tiene que añadir esta condicion ya que podias recargar a la vez que disparabas
         //PERO SIN LA ANIMACION DE RECARGA
-        if (animator.enabled == false)
+        if (animator.enabled == false || balasRestantes == 0)
         {
-        dispararPermitido = false;
-        animator.enabled = true;
-        balasRestantes = cargador;
-        animator.SetTrigger("Recargando");
+            dispararPermitido = false;
+            animator.enabled = true;
+            balasRestantes = cargador;
+            animator.SetTrigger("Recargando");
         }
     }
 

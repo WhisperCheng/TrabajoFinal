@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: JeringaCristal
-    second: {fileID: 2100000, guid: bd5d5d5e641629d4394262a6f57e0549, type: 2}
+    second: {fileID: 2100000, guid: 57c69846487c8bf4595d3f47b73c4b25, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: JeringaLiquido
-    second: {fileID: 2100000, guid: 4d330fb6b5ada31438488e85d70a59eb, type: 2}
+    second: {fileID: 2100000, guid: 00221726e0fdb5342ac81178add827ef, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: JeringaPlata
-    second: {fileID: 2100000, guid: 4ea8506d97aff734e80c3da0351d421b, type: 2}
+    second: {fileID: 2100000, guid: 6bce69392d841e14ea091db2704a6aa6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: JeringaVerdePlastico
-    second: {fileID: 2100000, guid: f20fd0286166cbf438406232bfc41517, type: 2}
+    second: {fileID: 2100000, guid: 57aa3ebb2f993dd4ca72e952f569d87d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
