@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5732512648154740944}
   - component: {fileID: 8042460237972214099}
   - component: {fileID: 7827227664681656443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "PaletMonta\xF1a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -41,32 +41,37 @@ public class CambioArmas : MonoBehaviour
         int previaArma = armaSeleccionada;
 
         //Se encarga de cambiar al arma que corresponde depenediendo del valor que tenga el float
-        if (cambioArmaRueda > 0f && cooldownCambioArmas > 0.2f)
+
+        if(armaActiva.GetComponent<ArmasDatos>().cambiarArma == true)
         {
-            if (armaSeleccionada >= transform.childCount - 1)
+            if (cambioArmaRueda > 0f && cooldownCambioArmas > 0.2f)
             {
-                armaSeleccionada = 0;
-            }
-            else
-                armaSeleccionada++;
-            cooldownCambioArmas = 0f;
-        }
-        if (cambioArmaRueda < 0f && cooldownCambioArmas > 0.2f)
-        {
-            if (armaSeleccionada <= 0f)
+                if (armaSeleccionada >= transform.childCount - 1)
+                {
+                    armaSeleccionada = 0;
+                }
+                else
+                    armaSeleccionada++;
+                    cooldownCambioArmas = 0f;
+                }
+            if (cambioArmaRueda < 0f && cooldownCambioArmas > 0.2f)
             {
-                armaSeleccionada = transform.childCount - 1;
+                if (armaSeleccionada <= 0f)
+                {
+                    armaSeleccionada = transform.childCount - 1;
+                }
+                else
+                    armaSeleccionada--;
+                cooldownCambioArmas = 0f;
             }
-            else
-                armaSeleccionada--;
-            cooldownCambioArmas = 0f;
+
+            //Cambia al arma que corresponde
+            if (previaArma != armaSeleccionada)
+            {
+                ArmaSeleccionada();
+            }
         }
 
-        //Cambia al arma que corresponde
-        if (previaArma != armaSeleccionada)
-        {
-            ArmaSeleccionada();
-        }
 
         disparoAutomatico();
     }

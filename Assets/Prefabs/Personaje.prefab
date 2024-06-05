@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 4043539681705961618}
   m_Layer: 0
   m_Name: Personaje
-  m_TagString: Untagged
+  m_TagString: Personaje
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,11 +456,12 @@ MonoBehaviour:
   cooldownDash: 0
   inercia: 0
   agachado: 0
+  salidaConsumibles: {fileID: 0}
   granadaPrefab: {fileID: 687621309750598085, guid: 7114c2753b3173d4089d94285d66ae1f, type: 3}
   granada: {fileID: 0}
   fuerzaLanzamiento: 0
+  granadaPilladaPEM: 0
   saltosExtrasRestantes: 0
-  salidaConsumibles: {fileID: 0}
 --- !u!114 &4043539681705961618
 MonoBehaviour:
   m_ObjectHideFlags: 0

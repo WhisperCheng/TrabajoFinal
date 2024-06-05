@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5669922481100076364}
   - component: {fileID: 8913627063748643006}
   - component: {fileID: 3159491216068931675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarrilAgua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8536210878192777978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarrilAgua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 7474130462648553952}
   - component: {fileID: 32297472534518033}
   - component: {fileID: 1341778258369607534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TapaBarrilAgua
   m_TagString: Untagged
   m_Icon: {fileID: 0}

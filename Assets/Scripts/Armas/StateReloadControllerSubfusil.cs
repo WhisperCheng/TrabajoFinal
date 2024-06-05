@@ -24,5 +24,6 @@ public class StateReloadControllerSubfusil : StateMachineBehaviour
     {
         animator.enabled = false;
         armasDatos.dispararPermitido = true;
+        armasDatos.cambiarArma = true;
     }
 }

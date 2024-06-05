@@ -24,6 +24,7 @@ public abstract class ArmasDatos : MonoBehaviour
     //Booleanos simples para saber si el arma es automatica o no y saber si el arma puede disparar o no
     public bool armaAutomatica;
     public bool dispararPermitido;
+    public bool cambiarArma;
 
     //Declaraciones para la posicion de las armas al ser recogidas y la posicion de la camara para el disparo
     public GameObject fpsCamera;
@@ -49,6 +50,7 @@ public abstract class ArmasDatos : MonoBehaviour
         armaHolster = GameObject.Find("Arma");
         Vector2moveCamera = GameObject.Find("CamaraPrimeraPersona").GetComponent<MovimientoCamara>();
         dispararPermitido = true;
+        cambiarArma = true;
         intensidadRotacion = 5;
         smoothRotacion = 5;
         rango = Mathf.Infinity;
@@ -82,7 +84,9 @@ public abstract class ArmasDatos : MonoBehaviour
         {
             animator.enabled = true;
             animator.SetTrigger("Recargando");
+            animator.SetBool("SinBalas", false);
             dispararPermitido = false;
+            cambiarArma = false;
             balasRestantes = cargador;
         }
     }
@@ -95,6 +99,7 @@ public abstract class ArmasDatos : MonoBehaviour
             Disparar();
             muzzleFlash.Play();
             dispararPermitido = false;
+            cambiarArma = false;
             animator.enabled = true;
             animator.SetTrigger("Disparando");
             balasRestantes--;
@@ -105,11 +110,12 @@ public abstract class ArmasDatos : MonoBehaviour
     //Se tuvo que añadir el "animator.enabled == false" por un bug del subfusil por ser automatica
     public void Sinbalas()
     {
-        if (balasRestantes == 0 && animator.enabled == false)
+        if (balasRestantes == 0)
         {
             animator.enabled = true;
-            animator.SetTrigger("SinBalas");
+            animator.SetBool("SinBalas", true);
             dispararPermitido = false;
+            cambiarArma = true;
         }
     }
 }

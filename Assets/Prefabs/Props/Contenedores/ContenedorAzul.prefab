@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5651585070294365699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ContenedorAzul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 9126787646773018361}
   - component: {fileID: 2884170218419210891}
   - component: {fileID: 1736468484475296738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaTraseraDerAzul.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 7039253393054138781}
   - component: {fileID: 1992006404342806446}
   - component: {fileID: 4801027142545497147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaDelanteIzqAzul.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 6044157194879175601}
   - component: {fileID: 3708999352974716549}
   - component: {fileID: 4042640837336725651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CuerpoContenedorAzul.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 7940676327979938491}
   - component: {fileID: 5535926974546859236}
   - component: {fileID: 6880434027090705936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaTraseraIzqAzul.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 2223413739928972525}
   - component: {fileID: 2748990076824857628}
   - component: {fileID: 542741083741214279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaDelanteDerAzul.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

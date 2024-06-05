@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3783689076833002437}
   - component: {fileID: 1432619923941588684}
   - component: {fileID: 8454902374996086092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaTraseraIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 3522592721762589024}
   - component: {fileID: 7665598870408487996}
   - component: {fileID: 8619509152604625973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaDelanteDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8748504579020432544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ContenedorRojo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 2574310265701952303}
   - component: {fileID: 518304228711534342}
   - component: {fileID: 5544978099433901667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CuerpoContenedor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1513093587251317640}
   - component: {fileID: 2668450908490584643}
   - component: {fileID: 3312168937490677770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaDelanteIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 8585516339359649268}
   - component: {fileID: 606198231231371900}
   - component: {fileID: 8258221218957842390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaTraseraDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

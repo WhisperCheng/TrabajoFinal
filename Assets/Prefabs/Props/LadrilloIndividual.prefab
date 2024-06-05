@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9175924391495056913}
   - component: {fileID: 4399803357822831005}
   - component: {fileID: -5739025910663502041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LadrilloIndividual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8684794913874738837}
   - component: {fileID: 1265342041898540555}
   - component: {fileID: 1481337517169798312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CuerpoContenedorNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 7298543048678443776}
   - component: {fileID: 7166056496392852655}
   - component: {fileID: 1563697891963601656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaDelanteIzqNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 1876878394412854744}
   - component: {fileID: 7178671591540054800}
   - component: {fileID: 8911683386212813339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaTraseraIzqNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 3798687130182567476}
   - component: {fileID: 7641384434009523503}
   - component: {fileID: 1608067358267787146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaTraseraDerNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 4285252872756918190}
   - component: {fileID: 528957266637028344}
   - component: {fileID: 8046335561336939832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PuertaDelanteDerNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6879209286270311561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ContenedorNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Suelo
   - Habilidad
   - Enemigo
   - Arma
   - Consumible
+  - Personaje
   layers:
   - Default
   - TransparentFX

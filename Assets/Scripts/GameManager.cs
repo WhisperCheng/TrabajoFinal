@@ -74,7 +74,14 @@ public class GameManager : MonoBehaviour
             puntosVidaActual = puntosVidaMaxima;
         }
     }
-
+    public void dañoRecibido()
+    {
+        puntosVidaActual -= 20 - reduccionDaño;
+        if (puntosVidaActual == 0)
+        {
+            //Tengo que poner que mueras y se ejecute algo como animacion para ejecutar el menu donde estan los datos
+        }
+    }
     public void AumentarVelocidad()
     {
         velocidadBase += 10;
@@ -89,7 +96,7 @@ public class GameManager : MonoBehaviour
     }
     public void AumentarReduccionDaño()
     {
-        reduccionDaño += 10;
+        reduccionDaño += 5;
     }
     public void AumentarCapacidadConsumibles()
     {

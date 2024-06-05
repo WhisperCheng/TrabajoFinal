@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2214402108780780190}
   - component: {fileID: 4277224511474697659}
   - component: {fileID: -4191042804028200883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MuroLadrillo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

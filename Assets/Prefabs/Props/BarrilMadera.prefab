@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 998562133639383305}
   - component: {fileID: 1826005596019281534}
   - component: {fileID: 7874437637180977391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8249030605313246142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarrilMadera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 8808199480464277175}
   - component: {fileID: 5261459277907110362}
   - component: {fileID: 8020815471460442808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TapaBarrilMadera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 7940292241405046761}
   - component: {fileID: 146325489541526200}
   - component: {fileID: 7160502248042315781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarrilMadera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,5 +24,6 @@ public class StateReloadController : StateMachineBehaviour
     {
         animator.enabled = false;
         armasDatos.dispararPermitido = true;
+        armasDatos.cambiarArma = true;
     }
 }

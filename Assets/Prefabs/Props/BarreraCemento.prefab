@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2125099830593855597}
   - component: {fileID: 5105725314991382573}
   - component: {fileID: -4214898887958718579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarreraCemento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
