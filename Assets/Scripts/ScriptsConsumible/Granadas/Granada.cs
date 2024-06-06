@@ -7,6 +7,10 @@ public class Granada : MonoBehaviour
     //Declaraciones
     Rigidbody rb;
 
+    public GameObject granadaEfecto;
+    public GameObject granadaEfectoBorrar;
+    public bool boolCooldown;
+
     //Variable float que se encarga del tiempo de la granada para explotar
     public float temporizadorGranada;
 
@@ -28,6 +32,7 @@ public class Granada : MonoBehaviour
         mascaraEnemigo = 1 << 8;
         temporizadorGranada = 3;
         rb = GetComponent<Rigidbody>();
+        granadaEfecto = Resources.Load<GameObject>("SmallExplosion");
     }
 
     // Update is called once per frame
@@ -43,7 +48,7 @@ public class Granada : MonoBehaviour
    //Se encarga de la explosion y de hacer daño
     public void explosion()
     {
-        if (temporizadorGranada <= 0)
+        if (temporizadorGranada <= 0 && boolCooldown == false)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.localPosition, radioExplosion, mascaraEnemigo);
 
@@ -53,7 +58,10 @@ public class Granada : MonoBehaviour
                 Debug.Log(hitcollider);
             }
             //Desactivar este destroy para poder probar el radio de las explosiones
-            Destroy(gameObject);
+            granadaEfectoBorrar = Instantiate(granadaEfecto, transform.localPosition, Quaternion.identity);
+            Destroy(granadaEfectoBorrar, 1);
+            Destroy(gameObject, 0.1f);
+            boolCooldown = true;
         }
     }
     public void OnDrawGizmos()

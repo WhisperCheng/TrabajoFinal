@@ -29,13 +29,17 @@ public class Pistola : ArmasDatos
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango) && dispararPermitido == true) 
+        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, rango) && dispararPermitido == true)
         {
             if (hit.collider.tag == "Enemigo")
             {
                 hit.collider.gameObject.GetComponent<Enemigo>().hitDaño(daño);
             }
-            Debug.Log(hit.transform.name);
+            if (hit.collider.tag != "Enemigo")
+            {
+                impactoBorrar = Instantiate(impactoBala, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactoBorrar, 2);
+            }
         }
     }
 }

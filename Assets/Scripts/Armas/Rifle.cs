@@ -35,6 +35,11 @@ public class Rifle : ArmasDatos
                 hit.collider.gameObject.GetComponent<Enemigo>().hitDaño(daño);
             }
             Debug.Log(hit.transform.name);
+            if (hit.collider.tag != "Enemigo")
+            {
+                impactoBorrar = Instantiate(impactoBala, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactoBorrar, 2);
+            }
         }
     }
 }

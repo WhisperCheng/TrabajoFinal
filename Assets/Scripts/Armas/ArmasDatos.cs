@@ -29,6 +29,8 @@ public abstract class ArmasDatos : MonoBehaviour
     //Declaraciones para la posicion de las armas al ser recogidas y la posicion de la camara para el disparo
     public GameObject fpsCamera;
     public GameObject armaHolster;
+    public GameObject impactoBala;
+    public GameObject impactoBorrar;
 
     //Variables en prueba para el sway del arma y el tilt para el movimiento
     public float intensidadRotacion;
@@ -49,6 +51,7 @@ public abstract class ArmasDatos : MonoBehaviour
         fpsCamera = GameObject.Find("CamaraPrimeraPersona");
         armaHolster = GameObject.Find("Arma");
         Vector2moveCamera = GameObject.Find("CamaraPrimeraPersona").GetComponent<MovimientoCamara>();
+        impactoBala = Resources.Load<GameObject>("EfectoImpactoPiedra");
         dispararPermitido = true;
         cambiarArma = true;
         intensidadRotacion = 5;
