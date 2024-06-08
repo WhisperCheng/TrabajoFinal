@@ -32,6 +32,13 @@ public class CambioArmas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cambiarArmas();
+        disparoAutomatico();
+    }
+
+    //Este void se encarga de todos los datos para el cambio de armas con la rueda del raton
+    void cambiarArmas()
+    {
         cooldownCambioArmas += Time.deltaTime;
 
         //Se encarga de recibir el input de la rueda del raton en positivo o negativo
@@ -71,11 +78,7 @@ public class CambioArmas : MonoBehaviour
                 ArmaSeleccionada();
             }
         }
-
-
-        disparoAutomatico();
     }
-
     //Se encarga de activar y desactivar el arma seleccionada
     void ArmaSeleccionada()
     {

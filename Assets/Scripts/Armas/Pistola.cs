@@ -11,7 +11,7 @@ public class Pistola : ArmasDatos
         // Llamo a la clase start del padre
         base.Start();
         daño = 10;
-        cargador = 30;
+        cargador = 17;
         balasRestantes = cargador;
         armaAutomatica = false;
     }

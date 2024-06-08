@@ -9,6 +9,7 @@ TagManager:
   - Arma
   - Consumible
   - Personaje
+  - Estructura
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Personaje
   - Enemigo
   - Arma
-  - 
+  - Escena
   - 
   - 
   - 

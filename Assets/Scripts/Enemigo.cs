@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,10 +16,15 @@ public class Enemigo : MonoBehaviour
     public Transform spawnPoint1;
     public Transform spawnPoint2;
     public GameObject balaPrefab;
-    float delay;
-    float lastShoot;
-    bool disparando;
-
+    public float delay;
+    public float ultimoDisparo;
+    public bool visionDirecta;
+    public bool quieto;
+    public GameObject efectoMuerte;
+    public GameObject efectoMuerteBorrar;
+    public int mascaraEstructuras;
+    public float distanciaRadio;
+    public Transform posicionVision;
 
     //Debo de mirar este script para limpiarlo un poco ya que esta horrible
 
@@ -28,8 +34,11 @@ public class Enemigo : MonoBehaviour
     {
         vidaEnemigo = 100;
         delay = 1;
-        lastShoot = Time.time;
+        distanciaRadio = 0.5f;
+        ultimoDisparo = Time.time;
         personajeObjetivo = GameObject.Find("Personaje");
+        efectoMuerte = Resources.Load<GameObject>("PlasmaExplosionEffect");
+        mascaraEstructuras = 1 << 6;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
@@ -42,31 +51,34 @@ public class Enemigo : MonoBehaviour
     void FixedUpdate()
     {
         movimiento();
+        vision();
     }
     public void movimiento()
     {
-        if (desactivado == false)
-        {
+        if (desactivado == false) 
+        { 
             distanciaEnemigoPersonaje = Vector3.Distance(agent.transform.position, personajeObjetivo.transform.position);
 
-            if (distanciaEnemigoPersonaje >= 15 && disparando == false)
+            if (quieto == false && (distanciaEnemigoPersonaje >= 15 || visionDirecta == false))
             {
                 agent.destination = personajeObjetivo.transform.position;
                 animator.SetBool("Caminando", true);
                 animator.SetBool("Disparando", false);
             }
-            else if (distanciaEnemigoPersonaje < 15 || disparando == true)
+            else if (quieto == true || (distanciaEnemigoPersonaje < 15 && visionDirecta == true))
             {
-
-                disparando = true;
+                quieto = true;
                 agent.destination = agent.transform.position;
-                transform.LookAt(personajeObjetivo.transform.position);
+                posicionVision.LookAt(personajeObjetivo.transform.position);
                 animator.SetBool("Caminando", false);
                 animator.SetBool("Disparando", true);
                 dispararSpawnPoint1();
             }
         }
-        else if (desactivado == true)
+
+        //Debo arreglar el rayo de vision del enemigo para que no dispare de forma loca
+
+        else if(desactivado == true) 
         {
             agent.destination = agent.transform.position;
             animator.SetBool("EfectoPEM", true);
@@ -80,6 +92,8 @@ public class Enemigo : MonoBehaviour
         vidaEnemigo -= dañoArma;
         if (vidaEnemigo <= 0)
         {
+            efectoMuerteBorrar = Instantiate(efectoMuerte, transform.position, Quaternion.identity);
+            Destroy(efectoMuerteBorrar, 1);
             Destroy(gameObject);
         }
     }
@@ -93,15 +107,35 @@ public class Enemigo : MonoBehaviour
     }
     public void dispararSpawnPoint1()
     {
-        if (Time.time - lastShoot > delay)
+        if (Time.time - ultimoDisparo > delay)
         {
             Instantiate(balaPrefab, spawnPoint1.position, transform.rotation);
             Invoke("dispararSpawnPoint2", 0.5f);
-            lastShoot = Time.time;
+            ultimoDisparo = Time.time;
         }
     }
     public void dispararSpawnPoint2()
     {
         Instantiate(balaPrefab, spawnPoint2.position, transform.rotation);
+    }
+    public void vision()
+    {
+        RaycastHit[] hits = Physics.SphereCastAll(posicionVision.position, distanciaRadio, transform.forward, Mathf.Infinity, mascaraEstructuras);
+
+        if (hits.Length == 0)
+        {
+            visionDirecta = true;
+        }
+        else if (hits.Length > 0) 
+        {
+            visionDirecta = false;
+            quieto = false;
+        }
+        Debug.Log(hits.Length); 
+    }
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(posicionVision.position + transform.forward * 15, 1f);
     }
 }
