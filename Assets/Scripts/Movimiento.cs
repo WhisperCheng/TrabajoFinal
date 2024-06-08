@@ -150,7 +150,7 @@ public class Movimiento : MonoBehaviour
         {   
             GameManager.Instance.velocidadActual /= 2;
             agachado = true;
-            characterController.height = 1;
+            characterController.height = 0.5f;
         }
         else if (context.canceled)
         {

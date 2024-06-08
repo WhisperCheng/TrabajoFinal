@@ -24,7 +24,7 @@ public class Enemigo : MonoBehaviour
     public GameObject efectoMuerteBorrar;
     public int mascaraEstructuras;
     public float distanciaRadio;
-    public Transform posicionVision;
+    public Transform visionSalida;
 
     //Debo de mirar este script para limpiarlo un poco ya que esta horrible
 
@@ -34,7 +34,7 @@ public class Enemigo : MonoBehaviour
     {
         vidaEnemigo = 100;
         delay = 1;
-        distanciaRadio = 0.5f;
+        distanciaRadio = 0.1f;
         ultimoDisparo = Time.time;
         personajeObjetivo = GameObject.Find("Personaje");
         efectoMuerte = Resources.Load<GameObject>("PlasmaExplosionEffect");
@@ -69,15 +69,13 @@ public class Enemigo : MonoBehaviour
             {
                 quieto = true;
                 agent.destination = agent.transform.position;
-                posicionVision.LookAt(personajeObjetivo.transform.position);
+                visionSalida.LookAt(personajeObjetivo.transform.position);
+                transform.LookAt(personajeObjetivo.transform.position);
                 animator.SetBool("Caminando", false);
                 animator.SetBool("Disparando", true);
                 dispararSpawnPoint1();
             }
         }
-
-        //Debo arreglar el rayo de vision del enemigo para que no dispare de forma loca
-
         else if(desactivado == true) 
         {
             agent.destination = agent.transform.position;
@@ -120,8 +118,7 @@ public class Enemigo : MonoBehaviour
     }
     public void vision()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(posicionVision.position, distanciaRadio, transform.forward, Mathf.Infinity, mascaraEstructuras);
-
+        RaycastHit[] hits = Physics.SphereCastAll(visionSalida.position, distanciaRadio, visionSalida.forward, Mathf.Infinity, mascaraEstructuras);
         if (hits.Length == 0)
         {
             visionDirecta = true;
@@ -132,10 +129,5 @@ public class Enemigo : MonoBehaviour
             quieto = false;
         }
         Debug.Log(hits.Length); 
-    }
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(posicionVision.position + transform.forward * 15, 1f);
     }
 }

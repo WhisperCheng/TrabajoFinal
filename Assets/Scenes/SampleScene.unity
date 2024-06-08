@@ -520,6 +520,18 @@ PrefabInstance:
       propertyPath: granadaPrefab
       value: 
       objectReference: {fileID: 687621309750598085, guid: 7114c2753b3173d4089d94285d66ae1f, type: 3}
+    - target: {fileID: 2850713678663675715, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105380534416429373, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105380534416429373, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4452434812195568087, guid: 97ddb60161f8f3a47a3a1a381b8b496b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3515494
@@ -1176,83 +1188,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855183163}
   m_CullTransparentMesh: 1
---- !u!1001 &2061230669
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -4214898887958718579, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_ProvidesContacts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.0001934
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.865654
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.8422604
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136764881818519838, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619595874900604961, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_Name
-      value: BarreraCemento
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329541514954988088, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b7410df18a740264dae2c0f1f86458d2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1270,4 +1205,3 @@ SceneRoots:
   - {fileID: 647317431}
   - {fileID: 751726246}
   - {fileID: 696882104}
-  - {fileID: 2061230669}
