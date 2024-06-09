@@ -34,7 +34,7 @@ public class Enemigo : MonoBehaviour
     {
         vidaEnemigo = 100;
         delay = 1;
-        distanciaRadio = 0.1f;
+        distanciaRadio = 0.4f;
         ultimoDisparo = Time.time;
         personajeObjetivo = GameObject.Find("Personaje");
         efectoMuerte = Resources.Load<GameObject>("PlasmaExplosionEffect");
@@ -59,17 +59,16 @@ public class Enemigo : MonoBehaviour
         { 
             distanciaEnemigoPersonaje = Vector3.Distance(agent.transform.position, personajeObjetivo.transform.position);
 
-            if (quieto == false && (distanciaEnemigoPersonaje >= 15 || visionDirecta == false))
+            if (quieto == false && (distanciaEnemigoPersonaje >= 20 || visionDirecta == false))
             {
                 agent.destination = personajeObjetivo.transform.position;
                 animator.SetBool("Caminando", true);
                 animator.SetBool("Disparando", false);
             }
-            else if (quieto == true || (distanciaEnemigoPersonaje < 15 && visionDirecta == true))
+            else if (quieto == true || (distanciaEnemigoPersonaje < 20 && visionDirecta == true))
             {
                 quieto = true;
                 agent.destination = agent.transform.position;
-                visionSalida.LookAt(personajeObjetivo.transform.position);
                 transform.LookAt(personajeObjetivo.transform.position);
                 animator.SetBool("Caminando", false);
                 animator.SetBool("Disparando", true);
@@ -114,11 +113,13 @@ public class Enemigo : MonoBehaviour
     }
     public void dispararSpawnPoint2()
     {
+        transform.LookAt(personajeObjetivo.transform.position);
         Instantiate(balaPrefab, spawnPoint2.position, transform.rotation);
     }
     public void vision()
     {
         RaycastHit[] hits = Physics.SphereCastAll(visionSalida.position, distanciaRadio, visionSalida.forward, Mathf.Infinity, mascaraEstructuras);
+        visionSalida.LookAt(personajeObjetivo.transform.position);
         if (hits.Length == 0)
         {
             visionDirecta = true;
