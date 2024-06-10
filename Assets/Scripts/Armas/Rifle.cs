@@ -9,7 +9,7 @@ public class Rifle : ArmasDatos
     new void Start()
     {
         base.Start();
-        daño = 10;
+        daño = 5;
         cargador = 71;
         balasRestantes = cargador;
         armaAutomatica = true;

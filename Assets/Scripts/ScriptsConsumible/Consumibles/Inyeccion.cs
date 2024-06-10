@@ -28,7 +28,7 @@ public class Inyeccion : MonoBehaviour
         Invoke("EfectoInyeccionFin", 3);
         GameManager.Instance.inyeccionesRestantes--;
         GameManager.Instance.inyeccionActivada = true;
-        GameManager.Instance.velocidadActual += 10;
+        GameManager.Instance.velocidadActual += 15;
         GameManager.Instance.regeneracionPerSegundoActual += 5;
     }
 

@@ -7,8 +7,11 @@ public class GranadaPEM : MonoBehaviour
     //Declaracion
     Rigidbody rb;
 
+    //Declaraciones que se encargan de las particulas de la granada al explotar
     public GameObject efectoExplosionPEM;
     public GameObject efectoExplosionPEMBorrar;
+
+    //Este bool se utiliza para hacer que las particulas solo aparezcan una vez y no se repetian ya que sucedia eso
     public bool boolCooldown;
 
     //Variable float que se encarga del tiempo de la granada para explotar
@@ -27,7 +30,7 @@ public class GranadaPEM : MonoBehaviour
     void Start()
     {
         daño = 10;
-        radioExplosion = 10;
+        radioExplosion = 12;
         mascaraEnemigo = 1 << 8;
         temporizadorGranada = 3;
         rb = GetComponent<Rigidbody>();

@@ -7,8 +7,11 @@ public class Granada : MonoBehaviour
     //Declaraciones
     Rigidbody rb;
 
+    //Declaraciones que se encargan de las particulas de la granada al explotar
     public GameObject granadaEfecto;
     public GameObject granadaEfectoBorrar;
+
+    //Este bool se utiliza para hacer que las particulas solo aparezcan una vez y no se repetian ya que sucedia eso
     public bool boolCooldown;
 
     //Variable float que se encarga del tiempo de la granada para explotar
@@ -30,7 +33,7 @@ public class Granada : MonoBehaviour
         daño = 80;
         radioExplosion = 10;
         mascaraEnemigo = 1 << 8;
-        temporizadorGranada = 3;
+        temporizadorGranada = 1.5f;
         rb = GetComponent<Rigidbody>();
         granadaEfecto = Resources.Load<GameObject>("SmallExplosion");
     }

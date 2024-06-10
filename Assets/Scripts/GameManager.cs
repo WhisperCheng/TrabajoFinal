@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     public int consumiblesRestantes;
     public int inyeccionesBase;
     public int inyeccionesRestantes;
-
     public int reduccionDaño;
 
     public static GameManager Instance { get; private set; }
@@ -32,14 +31,14 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            velocidadBase = 12;
-            fuerzaSalto = 5;
+            velocidadBase = 8;
+            fuerzaSalto = 4;
             sensibilidad = 20;
-            saltosExtrasBase = 1;
+            saltosExtrasBase = 0;
             reduccionDaño = 0;
             puntosVidaMaxima = 100;
             regeneracionPerSegundoBase = 1;
-            consumiblesBase = 3;
+            consumiblesBase = 1;
             inyeccionesBase = 1;
             puntosVidaActual = puntosVidaMaxima;
             inyeccionesRestantes = inyeccionesBase;
@@ -76,7 +75,7 @@ public class GameManager : MonoBehaviour
     }
     public void dañoRecibido()
     {
-        puntosVidaActual -= 20 - reduccionDaño;
+        puntosVidaActual -= 10 - reduccionDaño;
         if (puntosVidaActual == 0)
         {
             //Tengo que poner que mueras y se ejecute algo como animacion para ejecutar el menu donde estan los datos
@@ -84,11 +83,11 @@ public class GameManager : MonoBehaviour
     }
     public void AumentarVelocidad()
     {
-        velocidadBase += 10;
+        velocidadBase += 4;
     }
     public void AumentarFuerzaSalto()
     {
-        fuerzaSalto += 10;
+        fuerzaSalto += 2;
     }
     public void AumentarSaltosExtras()
     {
@@ -96,11 +95,12 @@ public class GameManager : MonoBehaviour
     }
     public void AumentarReduccionDaño()
     {
-        reduccionDaño += 5;
+        reduccionDaño += 2;
     }
     public void AumentarCapacidadConsumibles()
     {
         consumiblesBase += 1;
+        consumiblesRestantes += 1;
     }
     public void AumentarNumInyeccion()
     {

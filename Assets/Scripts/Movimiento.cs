@@ -126,7 +126,7 @@ public class Movimiento : MonoBehaviour
         if (context.phase == InputActionPhase.Started && colisionSuelo == true && cooldownSlide == true && agachado == false)
         {
             Invoke("coolDownSlide", 2);
-            GameManager.Instance.velocidadActual += 12;
+            GameManager.Instance.velocidadActual += 10;
             characterController.height = 1;
             cooldownSlide = false;
         }
@@ -186,8 +186,8 @@ public class Movimiento : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && cooldownDash == true && agachado == false && (inputMovimientoWASD.x >= 0.1 || inputMovimientoWASD.x <= -0.1 || inputMovimientoWASD.y <= 0))
         {
-            Invoke("coolDownDash", 2);
-            GameManager.Instance.velocidadActual +=  50;
+            Invoke("coolDownDash", 1.5f);
+            GameManager.Instance.velocidadActual +=  60;
             cooldownDash = false;
         }
         else
