@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6973202666219165290
+--- !u!1 &687621309750598085
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5618078181957500960}
-  - component: {fileID: 4126086273922718975}
-  - component: {fileID: 3676891315822762515}
-  - component: {fileID: -8377501856411741301}
-  - component: {fileID: 4664368731579729793}
+  - component: {fileID: 5483939010430444858}
+  - component: {fileID: 9184783478367771337}
+  - component: {fileID: 1641490762131470889}
+  - component: {fileID: -2448950113634989957}
+  - component: {fileID: -4609330834935400966}
+  - component: {fileID: -6840143016406814512}
   m_Layer: 10
-  m_Name: Muelle
-  m_TagString: Habilidad
+  m_Name: GranadaLanzar
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5618078181957500960
+--- !u!4 &5483939010430444858
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973202666219165290}
+  m_GameObject: {fileID: 687621309750598085}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 8, y: 8, z: 16.775005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4126086273922718975
+--- !u!33 &9184783478367771337
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973202666219165290}
-  m_Mesh: {fileID: -2124705421725058983, guid: e127a1d3d850eee459dabf9889ad2bb2, type: 3}
---- !u!23 &3676891315822762515
+  m_GameObject: {fileID: 687621309750598085}
+  m_Mesh: {fileID: 6981290006637109699, guid: ad70f9094fba185468544e3c0392ddf5, type: 3}
+--- !u!23 &1641490762131470889
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973202666219165290}
+  m_GameObject: {fileID: 687621309750598085}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +64,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1ebf0a89c16e3724db953c28616de3ee, type: 2}
+  - {fileID: 2100000, guid: 1291f159527302f4c9561e830aeb82f4, type: 2}
+  - {fileID: 2100000, guid: 20088efcc8b401943b91da3b1f649938, type: 2}
+  - {fileID: 2100000, guid: 2c9bfc3017f63004db5a969b801f31cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,13 +88,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-8377501856411741301
-BoxCollider:
+--- !u!64 &-2448950113634989957
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973202666219165290}
+  m_GameObject: {fileID: 687621309750598085}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -100,21 +103,56 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.3084867, y: 4.3084865, z: 2.3084867}
-  m_Center: {x: 0, y: 1.9999999, z: 0}
---- !u!114 &4664368731579729793
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6981290006637109699, guid: ad70f9094fba185468544e3c0392ddf5, type: 3}
+--- !u!54 &-4609330834935400966
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687621309750598085}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-6840143016406814512
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6973202666219165290}
+  m_GameObject: {fileID: 687621309750598085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5df754e20e7ee6409f5108ce18c2485, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ca9f578e90c98947bce8567fa36cae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  granadaEfecto: {fileID: 0}
+  granadaEfectoBorrar: {fileID: 0}
+  boolCooldown: 0
+  temporizadorGranada: 0
+  radioExplosion: 0
+  "da\xF1o": 0
+  mascaraEnemigo: 0

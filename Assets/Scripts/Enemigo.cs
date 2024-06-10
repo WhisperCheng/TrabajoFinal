@@ -25,6 +25,9 @@ public class Enemigo : MonoBehaviour
     public int mascaraEstructuras;
     public float distanciaRadio;
     public Transform visionSalida;
+    public SpawnManager spaManager;
+    public float probabilidad;
+    public GameObject[] objetosHabilidades;
 
     //Debo de mirar este script para limpiarlo un poco ya que esta horrible
 
@@ -37,6 +40,7 @@ public class Enemigo : MonoBehaviour
         distanciaRadio = 0.4f;
         ultimoDisparo = Time.time;
         personajeObjetivo = GameObject.Find("Personaje");
+        spaManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         efectoMuerte = Resources.Load<GameObject>("PlasmaExplosionEffect");
         mascaraEstructuras = 1 << 6;
         agent = GetComponent<NavMeshAgent>();
@@ -89,9 +93,23 @@ public class Enemigo : MonoBehaviour
         vidaEnemigo -= dañoArma;
         if (vidaEnemigo <= 0)
         {
+            soltarObjeto();
+            GameManager.Instance.enemigosEliminados++;
+            spaManager.enemigosRestantes--;
+            spaManager.comprobarNumeroEnemigos();
+            InterfazManager.Instance.interfazPantallas();
             efectoMuerteBorrar = Instantiate(efectoMuerte, transform.position, Quaternion.identity);
             Destroy(efectoMuerteBorrar, 1);
             Destroy(gameObject);
+        }
+    }
+    public void soltarObjeto()
+    {
+        probabilidad = Random.Range(0, 100);
+        Debug.Log(probabilidad);
+        if (probabilidad > 50)
+        {
+            Instantiate(objetosHabilidades[Random.Range(0, 6)], transform.position, Quaternion.identity);
         }
     }
     public void cooldownDesactivado()

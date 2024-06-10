@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: fc225f8d36a89364584c354ce6372f2b
+guid: ab1951ab7bea16d468010f1e5c0ae343
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lata
-    second: {fileID: 2100000, guid: c49e8d3282c938c42946cc0e1d57b51f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LataLateral
-    second: {fileID: 2100000, guid: b8999bcabc39b20478f2db17591d7d7d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LataSuperior
-    second: {fileID: 2100000, guid: a871435383a6c7143a2c14e6d9dee676, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

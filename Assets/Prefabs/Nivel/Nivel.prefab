@@ -5440,6 +5440,7 @@ Transform:
   - {fileID: 5907923995512283382}
   - {fileID: 3880188990969503362}
   - {fileID: 7484952343849617652}
+  - {fileID: 4893604870275740492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3858422235352916602
@@ -8031,6 +8032,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.004758571, y: 0.04, z: 0.08}
   m_Center: {x: -0.00012071617, y: 1.4390489e-11, z: 4.5742343e-19}
+--- !u!1 &7026693660565524616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4893604870275740492}
+  m_Layer: 10
+  m_Name: Spawn8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4893604870275740492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026693660565524616}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0.70710677, z: 0.00000001545431, w: 0.000000015454312}
+  m_LocalPosition: {x: 0.10000062, y: -11.705842, z: 45.3}
+  m_LocalScale: {x: 1000, y: 500, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4243829684024972819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7112931394146490606
 GameObject:
   m_ObjectHideFlags: 0

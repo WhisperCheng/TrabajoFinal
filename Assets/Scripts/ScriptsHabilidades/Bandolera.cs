@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bandolera : MonoBehaviour, IHabilidadesManager
+public class Bandolera : MonoBehaviour, Ihabilidades
 {
-    void IHabilidadesManager.ActivarHabilidad()
+    public void habilidadRecogida()
     {
         GameManager.Instance.AumentarCapacidadConsumibles();
         Destroy(gameObject);

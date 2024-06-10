@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 8bcc6fcb97ddfaa42ab684f604a1e864
+guid: ddea29a5065e3db4393b3b8b47290010
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BlancoSCP
-    second: {fileID: 2100000, guid: 5fa51badb693ab442b3f1ed831ec14e3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NegroSCP
-    second: {fileID: 2100000, guid: 55a493b3646f6754cb84699aee54b480, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PlacaBalistica
-    second: {fileID: 2100000, guid: 0391944018ea2d04a93f85696d0af694, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

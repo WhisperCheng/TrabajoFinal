@@ -3538,6 +3538,15 @@ MonoBehaviour:
   mascaraEstructuras: 0
   distanciaRadio: 0
   visionSalida: {fileID: 5041011113158814187}
+  probabilidad: 0
+  objetosHabilidades:
+  - {fileID: 3594214157074743229, guid: fa5d95773549c0441b12e41ad221cb2f, type: 3}
+  - {fileID: 2577202649030393572, guid: 4c08b204eb4b1cd4b8bb64dd9f5197a1, type: 3}
+  - {fileID: 6973202666219165290, guid: 4fe2eac8b0e3019418277811605051ca, type: 3}
+  - {fileID: 5313986392398127228, guid: 57dcfe188d83d374cbb0068cbfc05bc5, type: 3}
+  - {fileID: 1939267123033958937, guid: 49bdfc7279292a145938c3d03429908c, type: 3}
+  - {fileID: 7122950092769492570, guid: 8cb6611de9bacaf48acfe74d4efc2d52, type: 3}
+  - {fileID: 8855415752873568771, guid: 3a0c05c51d9efd243bc0a36613347e4a, type: 3}
 --- !u!1 &8118162352892357841
 GameObject:
   m_ObjectHideFlags: 0

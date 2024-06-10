@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4117796702055746176}
   - component: {fileID: 7560614857876819295}
   - component: {fileID: -2078180304048414780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GranadaPEM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f97715c010b7b489a3f320cbf6f837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  efectoExplosionPEM: {fileID: 0}
+  efectoExplosionPEMBorrar: {fileID: 0}
+  boolCooldown: 0
   temporizadorGranada: 0
   radioExplosion: 0
   "da\xF1o": 0

@@ -16,7 +16,7 @@ public class Movimiento : MonoBehaviour
     PlayerInput playerInput;
     CharacterController characterController;
 
-    //Variables float "Cooldowns"
+    //Variables bool "Cooldowns"
     public bool cooldownSalto;
     public bool cooldownSlide;
     public bool cooldownDash;
@@ -40,10 +40,8 @@ public class Movimiento : MonoBehaviour
     public GameObject granada;
     public float fuerzaLanzamiento;
 
-
     //Tengo que crear la tienda para poder seguir con esto y crear el cambio de granadas
     public bool granadaPilladaPEM;
-
 
     //Variables int
     public int saltosExtrasRestantes;
@@ -54,6 +52,9 @@ public class Movimiento : MonoBehaviour
     Vector3 movimiento;
     Vector3 move;
     Vector2 inputMovimientoWASD;
+
+
+    public string nombreObjeto;
 
     // Start is called before the first frame update
     void Start()
@@ -237,13 +238,18 @@ public class Movimiento : MonoBehaviour
     {
         if (other.gameObject.tag == "Habilidad")
         {
-            other.GetComponent<IHabilidadesManager>().ActivarHabilidad();
+            GameManager.Instance.consumiblesRecolectados++;
+            other.GetComponent<Ihabilidades>().habilidadRecogida();
             GameManager.Instance.velocidadActual = GameManager.Instance.velocidadBase;
         }
         if (other.gameObject.tag == "Consumible")
         {
+            GameManager.Instance.consumiblesRecolectados++;
             other.GetComponent<IRecogerConsumible>().consumibleRecolectado();
         }
+        nombreObjeto = other.gameObject.name;
+        nombreObjeto = nombreObjeto.Replace("(Clone)", "");
+        InterfazManager.Instance.interfazInformacion();
     }
     private void OnDrawGizmos()
     {

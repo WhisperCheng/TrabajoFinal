@@ -10,7 +10,7 @@ public class InyeccionStateController : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        inyeccion = GameObject.Find("Inyeccion").GetComponent<Inyeccion>();
+        inyeccion = GameObject.Find("InyeccionUsar").GetComponent<Inyeccion>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

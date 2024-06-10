@@ -6,12 +6,14 @@ public class SpawnManager : MonoBehaviour
 {
     public Transform[] spawn;
     public GameObject enemigo;
+    public int enemigosRestantes;
     Transform spawnElegido;
     public int spawnCountRestante;
     public int spawnCountBase;
     public int numOleada;
     public float cooldownSpawn;
     public bool cooldown;
+    public bool boolCambioOleada;
 
 
     //El spawn funciona correctamente el problema es que no se puede poner en Update ya que rompe todo
@@ -24,9 +26,11 @@ public class SpawnManager : MonoBehaviour
     {
         spawnCountBase = 2;
         spawnCountRestante = spawnCountBase;
+        enemigosRestantes = spawnCountBase;
         numOleada = 1;
         cooldownSpawn = 3;
-        //spawnCantidad();
+        spawnCantidad();
+        InterfazManager.Instance.interfazPantallas();
     }
 
     // Update is called once per frame
@@ -36,9 +40,14 @@ public class SpawnManager : MonoBehaviour
     }
     void cambioOleada()
     {
+        InterfazManager.Instance.textMensaje.gameObject.SetActive(false);
         numOleada++;
+        GameManager.Instance.numeroOleada++;
         spawnCountBase += 2;
         spawnCountRestante = spawnCountBase;
+        enemigosRestantes = spawnCountBase;
+        spawnCantidad();
+        InterfazManager.Instance.interfazPantallas();
         if (numOleada == 10)
         {
             cooldownSpawn = 1.5f;
@@ -49,28 +58,35 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("Spawneando enemigos");
         if (spawnCountRestante > 0)
         {
+            boolCambioOleada = false;
             Invoke("spawnEnemigo", cooldownSpawn);
         }
-        else if (spawnCountRestante == 0)
+    }
+
+    public void comprobarNumeroEnemigos()
+    {
+        if (spawnCountRestante == 0 && enemigosRestantes == 0)
         {
-            Invoke("cambioOleada", 20);
+            boolCambioOleada = true;
+            InterfazManager.Instance.interfazMensaje();
+            Invoke("cambioOleada", 10);
         }
     }
     public void coolDown()
     {
         cooldown = false;
-        //spawnCantidad();
+        spawnCantidad();
     }
     public void spawnEnemigo()
     {
         if (cooldown == false)
         {
-
-            spawnElegido = spawn[Random.Range(0, 7)];
+            spawnElegido = spawn[Random.Range(0, 8)];
             Instantiate(enemigo, spawnElegido.transform.position, Quaternion.identity);
             Invoke("coolDown", 0.1f);
             cooldown = true;
             spawnCountRestante--;
+            InterfazManager.Instance.interfazPantallas();
         }
     }
 }

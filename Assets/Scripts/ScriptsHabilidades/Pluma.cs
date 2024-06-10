@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pluma : MonoBehaviour, IHabilidadesManager
+public class Pluma : MonoBehaviour, Ihabilidades
 {
-    void IHabilidadesManager.ActivarHabilidad()
+    public void habilidadRecogida()
     {
         GameManager.Instance.AumentarSaltosExtras();
         Destroy(gameObject);

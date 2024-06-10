@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Muelle : MonoBehaviour, IHabilidadesManager
+public class Muelle : MonoBehaviour, Ihabilidades
 {
-    void IHabilidadesManager.ActivarHabilidad()
+    public void habilidadRecogida()
     {
         GameManager.Instance.AumentarFuerzaSalto();
         Destroy(gameObject);
