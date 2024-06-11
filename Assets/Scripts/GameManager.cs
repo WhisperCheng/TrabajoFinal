@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -115,9 +116,10 @@ public class GameManager : MonoBehaviour
         vignette.intensity.Override(0.4f);
         Invoke("dañoRecibidoCooldown", 0.3f);
         puntosVidaActual -= 10 - reduccionDaño;
-        if (puntosVidaActual == 0)
+        if (puntosVidaActual <= 0)
         {
-            //Tengo que poner que mueras y se ejecute algo como animacion para ejecutar el menu donde estan los datos
+            puntosFinal();
+            SceneManager.LoadScene("Muerte");
         }
     }
 

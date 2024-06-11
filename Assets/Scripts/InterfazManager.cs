@@ -121,11 +121,4 @@ public class InterfazManager : MonoBehaviour
             pantalla.text = spawnManager.numOleada + "ª Oleada\n" + spawnManager.enemigosRestantes + " Enemigos Restantes";
         }
     }
-    public void final()
-    {
-        textFinal.text = "Enemigos eliminado = " + GameManager.Instance.enemigosEliminados + "\n" +
-            "Rondas sobrevividas = " + GameManager.Instance.numeroOleada + "\n" +
-            "Objetos recolectados = " + GameManager.Instance.consumiblesRecolectados +
-            "Puntos final = " + GameManager.Instance.puntos;
-    }
 }
