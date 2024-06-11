@@ -7,30 +7,39 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
+    //Variables int
     public int vidaEnemigo;
+    public int mascaraEstructuras;
+
+    //Variables float
     public float distanciaEnemigoPersonaje;
-    public GameObject personajeObjetivo;
-    public bool desactivado;
-    NavMeshAgent agent;
-    Animator animator;
-    public Transform spawnPoint1;
-    public Transform spawnPoint2;
-    public GameObject balaPrefab;
     public float delay;
     public float ultimoDisparo;
+    public float distanciaRadio;
+    public float probabilidad;
+    //Variables bool
     public bool visionDirecta;
     public bool quieto;
+    public bool desactivado;
+
+    //Variables Gameobject
+    public GameObject personajeObjetivo;
+    public GameObject balaPrefab;
     public GameObject efectoMuerte;
     public GameObject efectoMuerteBorrar;
-    public int mascaraEstructuras;
-    public float distanciaRadio;
-    public Transform visionSalida;
-    public SpawnManager spaManager;
-    public float probabilidad;
+
+    //Lista de GameObject
     public GameObject[] objetosHabilidades;
 
-    //Debo de mirar este script para limpiarlo un poco ya que esta horrible
+    //Variables transform
+    public Transform spawnPoint1;
+    public Transform spawnPoint2;
+    public Transform visionSalida;
 
+    //Declaraciones de script
+    NavMeshAgent agent;
+    Animator animator;
+    public SpawnManager spaManager;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +66,8 @@ public class Enemigo : MonoBehaviour
         movimiento();
         vision();
     }
+
+    //Se encarga del movimiento mediante el agente y el desactivar en caso de que reciba daño con la granda PEM
     public void movimiento()
     {
         if (desactivado == false) 
@@ -88,6 +99,8 @@ public class Enemigo : MonoBehaviour
             Invoke("cooldownDesactivado", 3);
         }
     }
+
+    //Se encarga de los datos relacionados con el recibir daño
     public void hitDaño(int dañoArma)
     {
         vidaEnemigo -= dañoArma;
@@ -103,6 +116,8 @@ public class Enemigo : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //Se encarga de ver si suelta un objeto o no todo de forma aleatoria
     public void soltarObjeto()
     {
         probabilidad = Random.Range(0, 100);
@@ -112,6 +127,8 @@ public class Enemigo : MonoBehaviour
             Instantiate(objetosHabilidades[Random.Range(0, 6)], transform.position, Quaternion.identity);
         }
     }
+
+    //Se encarga del cooldown de desactivar al personaje
     public void cooldownDesactivado()
     {
         if (desactivado == true)
@@ -120,6 +137,8 @@ public class Enemigo : MonoBehaviour
             animator.SetBool("EfectoPEM", false);
         }
     }
+
+    //Se encarga del spawn de los disparos en el spawn1
     public void dispararSpawnPoint1()
     {
         if (Time.time - ultimoDisparo > delay)
@@ -129,11 +148,15 @@ public class Enemigo : MonoBehaviour
             ultimoDisparo = Time.time;
         }
     }
+
+    //Se encarga del spawn de los disparos en el spawn2
     public void dispararSpawnPoint2()
     {
         transform.LookAt(personajeObjetivo.transform.position);
         Instantiate(balaPrefab, spawnPoint2.position, transform.rotation);
     }
+
+    //Se encarga de ver si el enemigo tiene vision directa con el personaje
     public void vision()
     {
         RaycastHit[] hits = Physics.SphereCastAll(visionSalida.position, distanciaRadio, visionSalida.forward, Mathf.Infinity, mascaraEstructuras);

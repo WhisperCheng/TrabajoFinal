@@ -21,9 +21,6 @@ public class MovimientoCamara : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-
-        //Sirve para hacer desaperecer el raton
-        Cursor.lockState = CursorLockMode.Locked;
     }
     // Update is called once per frame
     void Update()

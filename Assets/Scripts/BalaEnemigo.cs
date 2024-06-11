@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class BalaEnemigo : MonoBehaviour
 {
-    Rigidbody rb;
+    //Variable float
     public float velocidadBala;
-    public ParticleSystem particle;
+
+    //Variables GameObject
     public GameObject impactoBalaEnemigo;
     public GameObject impactoBalaEnemigoBorrar;
+
+    //Declaraciones
+    Rigidbody rb;
+    public ParticleSystem particle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +32,8 @@ public class BalaEnemigo : MonoBehaviour
     {
 
     }
+
+    //Se encarga de ver con lo que colisiona
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.gameObject.layer == 6 || collision.collider.gameObject.layer == 10)
@@ -38,6 +46,8 @@ public class BalaEnemigo : MonoBehaviour
             destruir();
         }
     }
+
+    //Se encarga de destruirse y ejecutar un efecto visual
     public void destruir()
     {
         impactoBalaEnemigoBorrar = Instantiate(impactoBalaEnemigo, transform.position, Quaternion.identity);

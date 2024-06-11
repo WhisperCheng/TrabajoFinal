@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4577805504466603525}
   - component: {fileID: 2214402108780780190}
   - component: {fileID: 4277224511474697659}
-  - component: {fileID: -4191042804028200883}
+  - component: {fileID: 9003212065974723905}
   m_Layer: 6
   m_Name: MuroLadrillo
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5000002, y: 0.5000002, z: -0.49999982, w: -0.49999988}
   m_LocalPosition: {x: -0.00000047683716, y: 1.3955394, z: -1.8073204}
-  m_LocalScale: {x: 0.6977697, y: 1.6527059, z: 0.39932305}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.59213877, z: 0.14307122}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-4191042804028200883
-MeshCollider:
+--- !u!65 &9003212065974723905
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7231942606806045715, guid: d42537140e7a7264d85f891ae7d0fa30, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 11.950001, y: 8.387142, z: 2.0000203}
+  m_Center: {x: 2.9749997, y: 1.1935707, z: 0.0000019155964}
