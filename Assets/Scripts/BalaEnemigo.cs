@@ -34,17 +34,17 @@ public class BalaEnemigo : MonoBehaviour
     }
 
     //Se encarga de ver con lo que colisiona
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.collider.gameObject.layer == 6 || collision.collider.gameObject.layer == 10)
+        if(other.gameObject.layer == 6 || other.gameObject.layer == 10)
         {
             destruir();
         }
-        else if (collision.collider.tag == "Personaje")
+        else if (other.tag == "Personaje")
         {
             GameManager.Instance.dañoRecibido();    
             destruir();
-        }
+        }        
     }
 
     //Se encarga de destruirse y ejecutar un efecto visual

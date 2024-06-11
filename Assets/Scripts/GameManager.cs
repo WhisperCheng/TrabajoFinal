@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
         if (puntosVidaActual <= 0)
         {
             puntosFinal();
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Muerte");
         }
     }

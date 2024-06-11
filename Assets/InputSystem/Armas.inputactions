@@ -83,7 +83,7 @@
                 {
                     "name": "negative",
                     "id": "5bc54af4-235f-46d9-ae3d-bdb686e1da07",
-                    "path": "<Gamepad>/dpad/left",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -94,7 +94,7 @@
                 {
                     "name": "positive",
                     "id": "7c026955-c3e7-4161-9d15-9e319b23c869",
-                    "path": "<Gamepad>/dpad/right",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

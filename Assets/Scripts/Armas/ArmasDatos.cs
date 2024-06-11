@@ -4,7 +4,6 @@ using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public abstract class ArmasDatos : MonoBehaviour
 {

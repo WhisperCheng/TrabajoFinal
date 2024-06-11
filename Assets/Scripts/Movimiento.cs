@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Movimiento : MonoBehaviour
 {
@@ -247,9 +245,12 @@ public class Movimiento : MonoBehaviour
             GameManager.Instance.consumiblesRecolectados++;
             other.GetComponent<IRecogerConsumible>().consumibleRecolectado();
         }
-        nombreObjeto = other.gameObject.name;
-        nombreObjeto = nombreObjeto.Replace("(Clone)", "");
-        InterfazManager.Instance.interfazInformacion();
+        if (other.gameObject.tag == "Consumible" + "Habilidad")
+        {
+            nombreObjeto = other.gameObject.name;
+            nombreObjeto = nombreObjeto.Replace("(Clone)", "");
+            InterfazManager.Instance.interfazInformacion();
+        }
     }
     private void OnDrawGizmos()
     {

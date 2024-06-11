@@ -17,6 +17,7 @@ public class Enemigo : MonoBehaviour
     public float ultimoDisparo;
     public float distanciaRadio;
     public float probabilidad;
+
     //Variables bool
     public bool visionDirecta;
     public bool quieto;
@@ -122,7 +123,7 @@ public class Enemigo : MonoBehaviour
     {
         probabilidad = Random.Range(0, 100);
         Debug.Log(probabilidad);
-        if (probabilidad > 50)
+        if (probabilidad < 25)
         {
             Instantiate(objetosHabilidades[Random.Range(0, 6)], transform.position, Quaternion.identity);
         }
@@ -159,7 +160,7 @@ public class Enemigo : MonoBehaviour
     //Se encarga de ver si el enemigo tiene vision directa con el personaje
     public void vision()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(visionSalida.position, distanciaRadio, visionSalida.forward, Mathf.Infinity, mascaraEstructuras);
+        RaycastHit[] hits = Physics.SphereCastAll(visionSalida.position, distanciaRadio, visionSalida.forward, distanciaEnemigoPersonaje, mascaraEstructuras);
         visionSalida.LookAt(personajeObjetivo.transform.position);
         if (hits.Length == 0)
         {

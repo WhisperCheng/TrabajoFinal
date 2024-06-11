@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MovimientoCamara : MonoBehaviour
 {
     //Declaraciones
-    PlayerInput playerInput;
+    public PlayerInput playerInput;
 
     //Variables float
     float rotacionVertical;
@@ -20,12 +20,14 @@ public class MovimientoCamara : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
+       // playerInput = GetComponent<PlayerInput>();
+       // playerInput.enabled = true;
     }
     // Update is called once per frame
     void Update()
     {
         //Todo el movimiento de la camara en primera persona
+        Debug.Log(playerInput.actions["Look"].ReadValue<Vector2>());
         inputMovimientoCamara = playerInput.actions["Look"].ReadValue<Vector2>() * GameManager.Instance.sensibilidad * Time.deltaTime;
 
         rotacionVertical -= inputMovimientoCamara.y;
